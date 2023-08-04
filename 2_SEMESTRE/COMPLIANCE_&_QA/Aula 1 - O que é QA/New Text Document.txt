@@ -1,0 +1,7 @@
+--(slide)Expectativa : Não está descrito no requisito, pode passar neles mas no teste de aceitação mas o cliente não acha interessante ou não acha utilizável.
+
+SQA não é só teste, é gerenciar o quão bem os requisitos são descritos e entendidos por todas as partes.
+
+A diferença de SQA e SQC: SQC é limitado as fases de revisão de teste do desenvolvimento de software. Enquanto SQA é orientado para a PREVENÇÃO, SQC é orientado para a DETECÇÃO.
+
+Mitigação de riscos: Reduzir/Zerar riscos, que engloba tempo de desenvolvimento que pode gerar atrasos, tempo de testes e como exemplo, vazamentos, bugs e etc.

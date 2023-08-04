@@ -1,3 +1,11 @@
 Professor/Teacher: MARCEL AZEVEDO MASSA
 
 Matéria/Subject: Enterprise e Quality Assurance
+
+Conteúdo do 3º Semestre:
+
+- Introdução à qualidade de software
+- Introdução aos Testes de Software (modelos,tipos, técnicas, etc)
+- Testes Unitários com Junit
+- Test Driven Development (TDD)
+- Arquitetura Corporativa com TOGAF-ADM e Archimate
