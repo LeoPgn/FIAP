@@ -9,3 +9,9 @@ Conteúdo do 3º Semestre:
 - Testes Unitários com Junit
 - Test Driven Development (TDD)
 - Arquitetura Corporativa com TOGAF-ADM e Archimate
+- Introdução à Governança Corporativa de TI e COBIT
+- Testes de Integração com APIs REST e Mockito
+- Testes Manuais de Sistema
+- Aula Bonus (Challenge Sprint 1): Business Canvas e Elevator Pitch
+
+Conteúdo do 4º Semestre:
