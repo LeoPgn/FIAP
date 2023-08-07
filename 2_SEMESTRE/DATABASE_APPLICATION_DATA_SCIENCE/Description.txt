@@ -1,0 +1,13 @@
+Professor/Teacher: MARCEL THOMÉ FILHO
+E-mail: profmarcel.filho@fiap.com.br
+
+Matéria/Subject: DATA BASE APPLICATION & DATA SCIENCE / PL SQL
+
+Objetivo da matéria: 
+- Capacitar para criar aplicações robustas, seguras e eficientes para grandes volumes de dados utilizando linguagens 
+ANSI SQL e PL/SQL(aprendidos nos ultimos semestres). Aprenderemos procedures, functions, packages, triggers, collections e afins.
+
+DDL = Criar estruturas
+DML = Manipulção de tabelas
+
+
