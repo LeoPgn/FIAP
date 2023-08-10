@@ -1,0 +1,56 @@
+import { Text, View, StyleSheet,TextInput, Image} from 'react-native';
+import Constants from 'expo-constants';
+import AssetExample from '.componentsAssetExample';
+import {Card} from 'react-native-paper';
+
+export default function App() {
+  return (
+    View style={{marginTop 20}}
+      View style={{backgroundColor #babaca, height 100}}
+        Text numberOfLines={2} style={{color'Orange', fontSize 32, fontFamily 'helvetica', borderRadius 32, backgroundColor 'pink'}} 
+          The lazy dog jumps over the big brown fox
+          The lazy dog jumps over the big brown fox
+          The lazy dog jumps over the big brown fox
+          The lazy dog jumps over the big brown fox
+        Text
+      View
+      View style={
+        {alignSelf'center',
+        backgroundColor'red', 
+        height 100, 
+        width 200, 
+        borderRadius 100
+        }}
+        TextInput
+        keyboardType='numeric'
+        maxLength={8}
+        onBlur={_ = alert('Termine de preencher o campo')}
+        onFocus={_ = alert('O usuário está em foco')}
+        style={{
+          alignSelf'center',
+        backgroundColor'pink', 
+        height 100, 
+        width 140, 
+        borderRadius 50
+        }}
+        placeholder='Informe seu CPF'
+        TextInput
+
+        Image
+        style={{height 100, width 100}}
+        source={{uri'httpsi.pinimg.com550xf1dfddf1dfdda94f87aa15489ca239c1d71a89.jpg'}}
+        Image
+
+        Image
+        style={{height 100, width 100}}
+        source={require('.assetssnack-icon.png')}
+        Image
+        
+      View
+    View
+  );
+}
+
+
+
+
