@@ -1,0 +1,93 @@
+import { Text, 
+        View, 
+        TextInput, 
+        Button,
+        TouchableOpacity,
+        TouchableHighlight, 
+        Image,
+        Switch} from 'react-native';
+
+export default function App() {
+
+  state={
+    isEnabled false
+  }
+
+  return (
+   
+    View style={{paddingTop 30}}
+      Text selectable={true} 
+            ellipsizeMode='head' 
+            numberOfLines={7}
+
+      style={{backgroundColor '#babaca', 
+      textAlign'center', 
+      borderRadius 5,
+      }} 
+      
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+        Testando com um texto{'n'}
+
+      Text
+
+      View
+        TextInput  Criando caixa de input 
+        placeholder='Digite o seu apelido com 3 letras '
+        maxLength={3}
+        style={{
+          marginTop 5,
+          textAlign 'center',
+          borderColor 'gray',
+          borderWidth 1,
+          height 40,
+          paddingHorizontal 16
+        }}
+        TextInput
+      View
+
+      View style={{marginTop 5}}
+        Button 
+        title='Finalizar' 
+        color='green'
+        borderRadius
+        onPress={_ = alert('Botão Pressionado!')}
+        
+      View
+
+      View style={{paddingTop 15}} 
+        TouchableHighlight 
+        {Utilizamos igual um botão, mas ao clicar ele fica claro }
+          Text style={{alignSelf'center', backgroundColor'#babaca', borderRadius 5}}
+            Um texto clicável!
+          Text
+        TouchableHighlight
+      View
+
+      View style={{paddingTop 15}}
+        TouchableOpacity
+        {Utilizamos igual um botão, mas ao clicar ele fica opaco }
+          Image 
+            source={{uri  'httpspicsum.photos536354'}}
+            style={{alignSelf 'center',
+                    height 200,
+                    width 200}}
+        TouchableOpacity
+      View
+      
+      View style={{paddingTop 15, flexDirection row, alignItems'center'}}
+        TextDarkWhite modeText
+        Switch 
+          trackColor={{false '#000', true 'yellow'}}
+          value={this.state.isEnabled}
+          onValueChange={_ = this.setState({isEnabled  !this.state.isEnabled})}
+        
+      View
+    View
+    
+  );
+}
