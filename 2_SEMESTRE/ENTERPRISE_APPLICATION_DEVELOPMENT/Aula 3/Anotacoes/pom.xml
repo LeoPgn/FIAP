@@ -1,19 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
-    <persistence-unit name="default">
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-        <properties>
-            <property name="javax.persistence.jdbc.driver" value="oracle.jdbc.OracleDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL"/>
-            <property name="javax.persistence.jdbc.user" value="rm96562"/>
-            <property name="javax.persistence.jdbc.password" value="fiap23"/>
-            <property name="javax.persistence.query.timeout" value="60"/>
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/database/load.sql"/>
-            <property name="hibernate.dialect"
-                      value="org.hibernate.dialect.Oracle12cDialect"/> <!-- padrão do projedo do prof: org.hibernate.dialect.SQLServerDialect -->
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
-        </properties>
-    </persistence-unit>
-</persistence>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>Anotacoes</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.target>20</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.28</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.2.7.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle.database.jdbc</groupId>
+            <artifactId>ojdbc10</artifactId>
+            <version>19.18.0.0</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
