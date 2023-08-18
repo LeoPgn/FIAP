@@ -1,0 +1,25 @@
+Testes Funcionais:
+- Testes que fazem especificamente o que ele
+deveria realmente fazer. Valida a funcionalidade do software.
+
+Testes Não-Funcionais:
+- São testes que qualificam o quão bem o software faz a função dele, exemplo, o quão performático é o software.
+
+Norma ISO 25010:
+- Característica funcional: Functional Suitability
+As demais características NÃO são funcionais.
+
+Testes caixa-branca:
+- Testes baseados na estrutura do sistema. O tester DEVE entender como o sistema foi implementado.(Testes unitários, de integração, fazem parte de testes de caixa-branca).
+
+Testes caixa-preta:
+- Testes baseados em requisitos e especificação do projeto ou seja, NÃO necessita de que o tester tenha conhecimento de como o sistema foi implementado. (Testes de sistema fazem parte de testes de caixa-preta).
+
+Testes caixa-cinza:
+- Não necessáriamente precisa conhecer 100% do sistema, fazendo assim um planejamento melhor para a caixa-preta. Usa-se planejamentos com técnicas de caixa-preta. Testes realizados no nível de usuário.
+
+
+
+
+
+
