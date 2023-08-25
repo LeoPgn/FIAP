@@ -11,7 +11,7 @@ public class CalculadoraTeste {
     public void inicializar(){
         this.calc = new Calculadora();
     }
-    
+
     @Test
     void testeSomarDoisInteiros(){
         //Calculadora calc = new Calculadora();
