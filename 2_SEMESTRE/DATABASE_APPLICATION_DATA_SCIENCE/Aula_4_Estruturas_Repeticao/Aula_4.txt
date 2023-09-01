@@ -1,0 +1,95 @@
+set serveroutput on
+
+--LOOPS NÃO TEM CONDIÇÕES PARA INICIA-LO
+
+declare
+    V_CONTADOR NUMBER(2) := 1;
+BEGIN
+LOOP
+    DBMS_OUTPUT.PUT_LINE(V_CONTADOR);
+    --CONTADOR E ACUMULADOR
+    V_CONTADOR := V_CONTADOR + 1;
+    EXIT WHEN V_CONTADOR > 20;
+END LOOP;
+END;
+
+--WHILE POSSUI CONDICAO PARA INICIA-LO E CONTINUAR TRABALHANDO
+
+declare
+V_CONTADOR NUMBER(2) := 1;
+BEGIN
+WHILE V_CONTADOR <= 20 LOOP
+    DBMS_OUTPUT.PUT_LINE(V_CONTADOR);
+    V_CONTADOR := V_CONTADOR + 1;
+END LOOP;
+END;
+
+-- ESTRUTURA DE REPETIÇÃO FOR
+
+BEGIN
+FOR V_CONTADOR IN 1..20 LOOP
+    DBMS_OUTPUT.PUT_LINE(V_CONTADOR);
+END LOOP;
+END;
+
+-- ESTRUTURA DE REPETIÇÃO FOR COM REVERSE (DESCRESCENTE)
+
+BEGIN
+FOR V_CONTADOR IN REVERSE 1..20 LOOP
+    DBMS_OUTPUT.PUT_LINE(V_CONTADOR);
+END LOOP;
+END; 
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+EXERCICIOS
+
+1 - Montar um bloco de pregramação que realize o processamento de uma tabuada qualquer, 
+por exemplo, a tabuada do número 150.
+
+declare
+    V_TABUADA NUMBER(3) := &tabuada;
+    NUMERAL NUMBER(3) := 0;
+BEGIN
+    LOOP 
+        DBMS_OUTPUT.PUT_LINE(NUMERAL||' X '||V_TABUADA||' = '||(NUMERAL * V_TABUADA));
+        NUMERAL := NUMERAL + 1;
+        EXIT WHEN NUMERAL > 10;
+    END LOOP;
+END;                                                                                                                                                                
+
+--UTILIZANDO FOR
+
+declare 
+    V_TABUADA NUMBER(3) := &tabuada;
+begin 
+    for NUMERAL in 1..10 loop
+        DBMS_OUTPUT.PUT_LINE(NUMERAL||' X '||V_TABUADA||' = '||(NUMERAL * V_TABUADA));
+    end loop;
+end;
+
+2 - Em um intervalo numérico inteiro, informar quantos números são pares e quantos são ímpares.
+
+declare
+    contador number(4) := &contador;
+    n_pares number(3) := 0;
+    n_impares number(3) := 0;
+begin
+    loop
+        if mod(contador, 2) = 0 then
+            n_pares := n_pares + 1;
+        else
+            n_impares := n_impares + 1;
+        end if;
+        
+        contador := contador - 1; -- Avança para o próximo número no intervalo
+        
+        exit when contador = 0; -- Sai do loop quando o contador chega a 0
+    end loop;
+    
+    DBMS_OUTPUT.PUT_LINE('Número de Pares: ' || n_pares);
+    DBMS_OUTPUT.PUT_LINE('Número de Ímpares: ' || n_impares);
+end;
+set verify off;
+
+3 - Exibir a média dos valores pares em um intervalo numérico e soma dos ímpares.
+
