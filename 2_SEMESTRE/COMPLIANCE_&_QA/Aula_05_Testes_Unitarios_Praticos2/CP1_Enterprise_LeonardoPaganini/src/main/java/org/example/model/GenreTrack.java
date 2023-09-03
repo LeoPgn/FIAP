@@ -9,16 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "albumTrack")
-@IdClass(AlbumTrack.class)
-public class AlbumTrack {
+@Table(name = "genreTrack")
+public class GenreTrack {
     @Id
     @ManyToOne
-    @JoinColumn(name = "album_ID")
-    private Album album;
+    @JoinColumn(name = "genre_ID")
+    private Genre genre;
 
     @Id
     @ManyToOne
-    @JoinColumn(name = "track_ID")
+    @JoinColumn(name = "track_id")
     private Track track;
+
 }

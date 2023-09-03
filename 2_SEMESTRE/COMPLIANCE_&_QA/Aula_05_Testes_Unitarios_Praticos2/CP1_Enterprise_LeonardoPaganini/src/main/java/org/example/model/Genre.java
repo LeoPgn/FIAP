@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,4 +19,7 @@ public class Genre {
     private Long id;
     @Column(name = "genre_name")
     private String name;
+
+    @OneToMany(mappedBy = "genre", orphanRemoval = true)
+    private List<GenreTrack> genreTrack;
 }
