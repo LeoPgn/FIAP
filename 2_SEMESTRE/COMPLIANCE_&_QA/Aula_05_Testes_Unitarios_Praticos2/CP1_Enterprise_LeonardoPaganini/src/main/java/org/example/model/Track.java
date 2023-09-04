@@ -43,4 +43,7 @@ public class Track {
 
     @OneToMany(mappedBy = "track", orphanRemoval = true)
     private List<GenreTrack> genreTrack;
+
+    @OneToMany(mappedBy = "track", orphanRemoval = true)
+    private List<Purchase> purchase;
 }

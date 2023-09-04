@@ -30,4 +30,6 @@ public class Customer {
     @Column(name = "customer_device")
     private String device;
 
+    @OneToMany(mappedBy = "customer", orphanRemoval = true)
+    private List<Purchase> purchase;
 }
