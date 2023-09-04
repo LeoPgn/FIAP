@@ -10,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Entity
 @Table(name = "albumTrack")
-@IdClass(AlbumTrack.class)
 public class AlbumTrack {
     @Id
     @ManyToOne
