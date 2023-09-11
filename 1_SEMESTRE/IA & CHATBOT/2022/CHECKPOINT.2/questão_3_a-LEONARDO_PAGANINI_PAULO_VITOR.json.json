@@ -1,0 +1,84 @@
+[
+    {
+        "id": "fdd3b2ac91314750",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "8e837bce417a6ed8",
+        "type": "telegram receiver",
+        "z": "fdd3b2ac91314750",
+        "name": "",
+        "bot": "6077328ee343bfa1",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 210,
+        "y": 160,
+        "wires": [
+            [
+                "6965683b390d0ae6",
+                "f9666d2fc3f9c9f6"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "6965683b390d0ae6",
+        "type": "debug",
+        "z": "fdd3b2ac91314750",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 480,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "f9666d2fc3f9c9f6",
+        "type": "telegram sender",
+        "z": "fdd3b2ac91314750",
+        "name": "",
+        "bot": "6077328ee343bfa1",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 550,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6077328ee343bfa1",
+        "type": "telegram bot",
+        "botname": " poopao_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksprotocol": "socks5",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    }
+]

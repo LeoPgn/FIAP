@@ -1,0 +1,27 @@
+[
+    {
+        "id": "665bc39945c8932a",
+        "type": "watson-assistant-v2",
+        "z": "2aa1aa860eb21d8b",
+        "name": "nó watson",
+        "service-endpoint": "",
+        "assistant_id": "99caba3a-28ec-4010-b206-a57a12b18fd5",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "persist-session-id": false,
+        "credentials": {},
+        "x": 410,
+        "y": 180,
+        "wires": [
+            [
+                "3e39111b7400d9dd",
+                "450370f6b8be1c48"
+            ]
+        ]
+    }
+]
