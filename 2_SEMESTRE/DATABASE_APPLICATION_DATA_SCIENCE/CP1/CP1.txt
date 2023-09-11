@@ -1,0 +1,48 @@
+2TDSPS - AVALIAÇÃO DATA BASE 04/09/2023
+RM96562 - LEONARDO PAGANINI
+RM97305 - JHONN BRANDON
+
+EXERCICIO 1 - 
+
+set serveroutput on;
+set verify off;
+
+declare
+   valor number(3) := &valor; 
+   cedulas_disponiveis number := valor;
+   cedula number := 100;
+
+begin
+   while cedulas_disponiveis > 0 loop
+      if cedulas_disponiveis >= cedula then
+         DBMS_OUTPUT.PUT_LINE('Cédulas de ' || cedula || ': ' || trunc(cedulas_disponiveis / cedula));
+         cedulas_disponiveis := cedulas_disponiveis - (trunc(cedulas_disponiveis / cedula) * cedula);
+      end if;
+      
+      if cedula = 100 then
+         cedula := 50;
+      elsif cedula = 50 then
+         cedula := 20;
+      elsif cedula = 20 then
+         cedula := 10;
+      elsif cedula = 10 then
+         cedula := 5;
+      elsif cedula = 5 then
+         cedula := 2;
+      else
+         cedula := 1;
+      end if;
+   end loop;
+end;
+/
+
+EXERCICIO 2 -
+
+create table apostador(
+id_apostador number(3) primary key,
+nome_apostador varchar2(50),
+gols_time_1 number(1),
+gols_time_2 number(1),
+pontos number(3)
+);
+

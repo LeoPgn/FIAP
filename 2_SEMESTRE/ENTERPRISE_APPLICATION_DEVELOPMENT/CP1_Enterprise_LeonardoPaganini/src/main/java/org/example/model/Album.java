@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -20,7 +22,7 @@ public class Album {
     @Column(name = "album_type")
     private String type;
     @Column(name = "album_released")
-    private String released;
+    private Date released;
     @Column(name = "album_recorded")
     private String recorded;
 

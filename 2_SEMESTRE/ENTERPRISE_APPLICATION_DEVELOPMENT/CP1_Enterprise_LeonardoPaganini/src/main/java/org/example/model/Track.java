@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.sql.Date;
 import java.util.List;
 
 @Data
@@ -33,7 +34,7 @@ public class Track {
     @Column(name = "track_songwriters")
     private String songwriters;
     @Column(name = "track_released")
-    private String released;
+    private Date released;
 
     @OneToMany(mappedBy = "track", orphanRemoval = true)
     private List<TrackArtist> trackArtist;

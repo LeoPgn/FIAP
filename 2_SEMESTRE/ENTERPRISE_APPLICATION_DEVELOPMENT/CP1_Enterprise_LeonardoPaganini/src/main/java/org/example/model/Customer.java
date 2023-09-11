@@ -15,19 +15,19 @@ import java.util.List;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "email_ID", nullable = false)
+    @Column(name = "email", nullable = false)
     private Long id;
-    @Column(name = "customer_name")
+
     private String name;
-    @Column(name = "customer_password")
+
     private String password;
-    @Column(name = "customer_age")
+
     private Integer age;
     @Column(name = "card_information")
     private String information;
-    @Column(name = "customer_ip_adress")
+    @Column(name = "IP_adress")
     private String adress;
-    @Column(name = "customer_device")
+
     private String device;
 
     @OneToMany(mappedBy = "customer", orphanRemoval = true)

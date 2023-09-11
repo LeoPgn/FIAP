@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import oracle.sql.DATE;
+
+import java.sql.Date;
 
 @Data
 @NoArgsConstructor
@@ -13,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class Purchase {
     @Id
     @ManyToOne
-    @JoinColumn(name = "email_ID")
+    @JoinColumn(name = "email")
     private Customer customer;
 
     @Id
@@ -23,7 +26,7 @@ public class Purchase {
 
     private String payment_method;
 
-    private String date;
+    private Date data;
 
-    private String time;
+    private String tempo;
 }
