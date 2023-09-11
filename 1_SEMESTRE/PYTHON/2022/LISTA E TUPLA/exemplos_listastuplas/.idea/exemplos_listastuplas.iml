@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="PYTHON_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Aula11.10 - Listas STRINGS" />
+    <orderEntry type="module" module-name="Aula18.10-DICIONARIO" />
+    <orderEntry type="module" module-name="DICIONARIO" />
+    <orderEntry type="module" module-name="LISTA_EXERCICIOS_PROVA" />
+  </component>
+</module>
