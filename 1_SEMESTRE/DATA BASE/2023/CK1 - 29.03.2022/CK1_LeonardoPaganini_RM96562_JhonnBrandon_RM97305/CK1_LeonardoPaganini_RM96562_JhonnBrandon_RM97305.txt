@@ -1,0 +1,111 @@
+CK1 - Data Base 29/03/2022
+Integrantes: 
+- Leonardo Paganini | RM96562
+- Jhonn Brandon | RM97305
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Condominio
+drop table Condominio
+
+create table Condominio(cd_condominio number(4) primary key,
+nome_condominio varchar(50), endereco_condominio varchar(50));
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Possui
+drop table Possui
+
+create table Possui (cd_condominio references Condominio, cd_bloco references Bloco);
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Bloco
+drop table Bloco
+
+create table Bloco (cd_bloco number(4) primary key, 
+nome_bloco varchar(50));
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Pertence
+drop table Pertence
+
+create table Pertence(cd_bloco references Bloco, cd_apto references Apartamento);
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Apartamento
+drop table Apartamento
+
+create table Apartamento (cd_apto number (4), numero_apto number(4));
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Reside
+drop table Reside
+
+create table Reside (cd_morador references Morador, cd_apto references Apartamento);
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Morador
+drop table Morador
+
+create table Morador (cd_morador number (4), 
+cpf_morador varchar(40));
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Locatario
+drop table Locatario
+
+create table Locatario (cd_locatario number (4) primary key, 
+nome_locatario varchar(50), cpf_locatario varchar(40));
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Aluga
+drop table Aluga
+
+create table Aluga (cd_locatario references Locatario, cd_apto references Apartamento);
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Visitante
+drop table Visitante
+
+create table Visitante (cd_visitante number(4),
+nome_visitante varchar(50),cpf_visitante varchar(40));
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Tem
+drop table Tem
+
+create table Tem(cd_veiculo references Veiculo, cd_visitante references Visitante);
+-=-=-=-=-=-=-=-=-=-=-=-Relacionamento-=-=-=-=-=-=-=-=-=-=-=-
+select * from Recebe
+drop table Recebe
+
+create table Recebe (cd_visitante references Visitante, cd_apto references Apartamento);
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+select * from Veiculo
+drop table Veiculo
+
+create table Veiculo(cd_veiculo number(4) primary key, cor_veiculo varchar(40));
+
+*************************Inserção de Dados*************************************
+select * from Condominio
+insert into Condominio values (1, 'Condominio Sol', 'Rua das Flores');
+insert into Condominio values (2, 'Condominio da Lua', 'Rua das Rosas');
+
+select * from Bloco
+insert into Bloco values (1, 'BLOCO A');
+insert into Bloco values (2, 'BLOCO B');
+
+select * from Apartamento
+insert into Apartamento values (1, 42);
+insert into Apartamento values (2, 94);
+
+select * from Morador
+insert into Morador values (1, '43523412390');
+insert into Morador values (2, '12345678910');
+
+select * from Locatario
+insert into Locatario values (1, 'José S.', '10312345698');
+insert into Locatario values (2, 'Armando J..', '43543455910');
+
+select * from Visitante
+insert into Visitante values (1, 'Carlinhos', '43523412390');
+insert into Visitante values (2, 'Roberto', '12345678910');
+
+select * from Veiculo
+insert into Veiculo values (1, 'Vermelho');
+insert into Veiculo values (2, 'Preto');
+
+*************************Alteração de Dados*************************************
+Apartamento
+Visitante
+Morador
+
+alter table Apartamento add constraint cd_apto primary key (4);

@@ -1,0 +1,20 @@
+Gabarito Empresa
+-=-=-=-=-=-=-=-=-
+
+create table Empregado (Nome_Empregado varchar (50)not null, 
+Rua varchar(100)not null, Cidade varchar(30), Estado_Civil varchar(15));
+--Inserindo na table empregado uma COLUNA que não exite chamada SALARIO e atribuindo tipo numero.
+alter table empregado add salario number(11,2);
+alter table empregado add data_nascimento date;
+alter table empregado modify cidade varchar(110);
+
+create table Companhia (Nome_companhia varchar(50) primary key, cidade varchar(30));
+
+--Alterando a table para inserir primary key na coluna nome_empregado
+alter table empregado add primary key (nome_empregado);
+
+create table Trabalha (Nome_Empregado varchar(50) primary key references empregado,
+Nome_Companhia varchar(50) not null references companhia, salario number(9,2) not null);
+
+create table Gerente (Nome_Empregado varchar(50)not null references empregado,
+Nome_Gerente varchar(50)not null references empregado);

@@ -1,0 +1,50 @@
+Gabarito - Locadora
+-=-=-=-=-=-=-=-=-=-
+
+create table categoria (cd_categ number(4) primary key, Descricao varchar(50) not null);
+
+create table Filme (cd_filme number(4) primary key, Titulo varchar(70) not null, cd_categ references Categoria);
+
+create table DVD (num_dvd number(4) primary key, cod_filme references filme, Tipo char);
+
+create table Cliente (cd_cli number(4) primary key, Prenome varchar(50) not null, sobrenome varchar(50),
+Endereco varchar(70), Telefone varchar(20));
+
+create table aluga (cd_clie references cliente, cd_dvd references dvd, 
+data_ret date, data_dev date, 
+num_aluga number(4) primary key);
+
+create table Ator (Cod_ator number(4) primary key, Nome_popular varchar(50) not null, 
+Nome_artistico varchar(50), Datanasc date);
+
+create table Estrela (cd_ator references ator, cd_filme references filme);
+
+--Tabela criada, agora vamos inserir os dados dentro dela
+
+insert into categoria values (1, 'Comédia');
+insert into categoria values (2, 'Drama');
+insert into categoria values (3, 'Aventura');
+insert into categoria values (4, 'Terror');
+select * from categoria
+
+insert into filme values (1, 'Sai pra lá', 1);
+insert into filme values (2, 'Ajuda Eterna', 2);
+insert into filme values (3, 'Anjos Malditos', 2);
+insert into filme values (4, 'Panico II', 4);
+insert into filme values (5, 'Um dia de furia', 3);
+insert into filme values (7, 'Sinais do Tempo', 2);
+insert into filme values (8, 'A melodia da vida ', 1);
+
+insert into dvd values (1, 1, 'S');
+insert into dvd values (2, 1, 'S');
+insert into dvd values (3, 1, 'S');
+insert into dvd values (4, 2, 'D');
+insert into dvd values (5, 3, 'S');
+
+insert into cliente values (1, 'João', 'Silva', 'Rua da Cruz Sem Pé', '4444-1111');
+insert into cliente values (2, 'Antônio', 'Ferreira', 'Av. da Vila Velha', '6660-9333');
+insert into cliente values (3, 'Fabio','Dias','Rua Antonio Vieira', '2337-0393');
+insert into cliente values (4, 'Andreia', 'Melo', 'Rua da Praia Bonita', '8989-7777');
+insert into cliente values (5, 'Murilo', 'Fontes', 'Av. dos Autonomistas, '9090-9090');
+
+-- AGORA TEMOS QUE FAZER AS ALTERAÇÕES, O TXT ESTA NO SITE

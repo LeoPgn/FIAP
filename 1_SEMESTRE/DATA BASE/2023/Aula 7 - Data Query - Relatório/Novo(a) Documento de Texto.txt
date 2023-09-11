@@ -1,0 +1,2 @@
+select nome_clie "Nome", uf from Cliente where uf = 'SP'
+select val_unit "Preço", descricao from Produto where val_unit < 1.50 order by val_unit

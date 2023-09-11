@@ -1,0 +1,21 @@
+Exercicio 1 - Locadora de vídeo
+Entidades (Atributos)
+Cliente (Pk CodCli, Prenome, Sobrenome, Endereco, Telefone)
+Relacionamento(ALUGA) Cliente-DVD N-N (DataRet, DataDev)
+DVD (Pk NumDVD, Tipo)
+Relacionamento(Possui) DVD-Filme N-N()
+Filme (Pk CodFilme, Titulo)
+Relacionamento (Classifica) Filme-Categoria N-1
+Ator (Pk CodAtor, DataNasc, Nome_Popular, Nome_Artistico)
+Relacionamento (Estrela) Filme-Ator N-N
+Categoria (Pk CodCateg, Descricao)
+
+create table Cliente
+(Cod_Cli number(5) primary key,
+prenome varchar2(30),
+sobrenome varchar2(30),
+endereco varchar2(30),
+telefone varchar2(11));
+
+desc Cliente
+

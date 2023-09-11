@@ -1,0 +1,23 @@
+Correção CK1 - Data Base
+
+a)  create table Apartamento (n_apto number(4), andar number(2), n_apto(1));
+    create table Morador (cpf_morador char(11), nome_morador varchar(25), fone_morador varchar(11));
+    create table ap_mora (n_apto bumber (4), cpf_mora char (11));
+    
+b)  alter table Apartamento add constraint ap_nop_pk primary key (n_apto);
+    alter table Morador add primary key (cpf_morador);
+    
+c)  alter table ap_mora add constraint apm_nap_fk foreign key (n_apto) references Apartamento;
+    alter table ap_mora add constraint apm_cpf_fk foreign key (cpf_morador) references Morador;
+
+d)  insert into Apartamento values (1, 42, 3);
+    insert into Apartamento values (2, 94, 2);
+    
+    insert into Morador values ('123', 'Jonas', '1234');
+    insert into Morador values ('321', 'Marta', '4321');
+    insert into ap_mora values (101, '123');
+    insert into ap_mora values (102, '123');
+
+e)  update apartamento set n_qto = 2 where n_apto = 101;
+
+f)  alter table apartamento modify andar number(4);
