@@ -1,0 +1,24 @@
+Escopo do projeto
+
+BLOG DE NOTICIAS SOBRE TECH
+
+- Homepage 
+	- Portal de ultimas noticias
+- About
+	- Sobre nós
+- CEP
+	- Verificar CEP
+	- retornar cep no txt apropriado
+
+COMPONENTES
+	- navbar
+	- footer
+	- imagens
+Folders
+	- imagens
+	- paginas
+		- Home
+		- Sobre
+		- CEP
+	- services
+		- apiCep

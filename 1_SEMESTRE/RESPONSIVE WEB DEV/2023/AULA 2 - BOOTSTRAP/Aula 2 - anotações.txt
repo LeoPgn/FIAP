@@ -1,0 +1,14 @@
+1- O layout de um site são compostos por três pilares:
+ - Container (Pode ter N colunas)
+ - ROW (Linha) (Qualquer linha possuí 12 colunas)
+ - Col (grid/ Colunas)
+
+2 - Existem 2 tipos de container
+  - Container e Container Fluid 
+     |---> (Uma carrega o layout com espaçamento nos cantos da página, a outra carrega o layout sem espaçamento nos cantos).
+
+3 - Bootstrap 
+  - Principal funcionalidade: Tornar o site responsivo
+
+4 - Para pesquisar referências w3schools.com/bootstrap
+5 - colocar diferenciais de bootstrap no linkedIn

@@ -1,0 +1,50 @@
+body{
+    background-color: darkcyan;
+}
+
+.titulo{
+    color: white;
+    text-align: center;
+}
+
+
+
+.botao{
+    color:white;
+    background-color: aqua;
+
+    padding-top: 15px; /* espaçamento superior */ 
+    padding-bottom: 15px; /* espaçamento inferior */
+
+    padding-right: 15px; /* espaçamento direto */
+    padding-left: 15px; /* espaçamento esquerdo */
+    
+    border-radius: 30px;        
+
+}
+.botaoDois{
+    color:white;
+    background-color: aqua;
+
+    padding-top: 15px; /* espaçamento superior */ 
+    padding-bottom: 15px; /* espaçamento inferior */
+
+    padding-right: 15px; /* espaçamento direto */
+    padding-left: 15px; /* espaçamento esquerdo */
+    
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.sublinhado{
+    text-decoration: underline;
+}
+
+.conteudoTextoCaixa{
+    background-color:#333; 
+    padding: 10px; 
+    margin: 20px; 
+    border-radius: 20px; 
+    color: whitesmoke;
+
+}

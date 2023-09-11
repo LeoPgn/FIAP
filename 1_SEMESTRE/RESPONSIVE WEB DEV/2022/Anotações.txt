@@ -1,0 +1,10 @@
+git clone https://github.com/leosonfire/responsiveweb.git
+
+git code  https://github.com/leosonfire/responsiveweb.git
+_______________________________________________________________
+
+***COMANDOS NO TERMINAL DO VS CODE APÓS SELECIONAR GIT BASH***
+
+git config --global user.name "leosonfire"
+
+git config --global user.email "leosonfire01@outlook.com"

@@ -1,0 +1,28 @@
+body{
+    background-color: aqua;
+}
+/* .nome_da_classe >> . para criar a classe*/
+.Titulo{
+    font-size: 20px; 
+    color:black;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.sublinhado{
+    text-decoration: underline;
+}
+.botao{
+    color:orange;
+    background-color: green;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 8px;
+}
+.botao2{
+    color:white;
+    background-color:blueviolet;
+    padding: 15px; /* margem das bordas */
+    border-radius: 15px; /* para arredondar as bordas em x pixels*/
+}
