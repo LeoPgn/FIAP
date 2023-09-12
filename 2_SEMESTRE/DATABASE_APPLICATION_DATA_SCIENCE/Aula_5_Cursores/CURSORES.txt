@@ -1,0 +1,74 @@
+--Criando e inserindo dados na tabela
+
+create table Funcionario(
+cd_fun number(1) primary key,
+nm_fun varchar2(50),
+salario number(4),
+dt_adm date
+);
+
+set serveroutput on
+BEGIN
+    insert into funcionario values (1, 'Marcel', 1000, '17/04/2000');
+    insert into funcionario values (2, 'Claudia', 1600, '02/10/1998');
+    insert into funcionario values (3, 'Joaquim', 5500, '10/07/2010');
+    insert into funcionario values (4, 'Valéria', 7300, '08/06/2015');
+END;
+
+-- Executando o cursor para apresentar os dados da tabela
+
+DECLARE
+    CURSOR c_exibe is select nm_fun, salario from funcionario;
+    v_exibe c_exibe%rowtype;
+BEGIN
+    OPEN c_exibe;
+    LOOP
+        FETCH c_exibe into v_exibe;
+    EXIT WHEN c_exibe%NOTFOUND;
+    DBMS_OUTPUT.PUT_LINE('Nome: '||v_exibe.nm_fun||' -Salário: '||v_exibe.salario);
+    END LOOP;
+    CLOSE c_exibe;
+END;
+
+select * from funcionario
+drop table Funcionario
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+EXERCICIO 1:
+Criar uma tabela de histórico e utilizar os cursores para localizar a media e a situação do aluno,
+após, fazer um bloco de código que dirá o resultado final do aluno de acordo com essas colunas.
+
+create table Historico(
+cd_disciplina number(3) primary key,
+nome_disciplina varchar2(50),
+carga_horaria number(3),
+CP1 number(3,1),
+CP2 number(3,1),
+CP3 number(3,1),
+Faltas number(3),
+Media number(3,1),
+Situacao varchar2(50));
+
+--DADOS INSERIDOS PELO PROFESSOR
+set serveroutput on;
+BEGIN
+    INSERT INTO HISTORICO VALUES (100, 'AI', 120, 10, 10, 10, 0, 10, 'Aprovado');
+    INSERT INTO HISTORICO VALUES (200, 'DBA', 100, 1, 1, 1, 0, 1, 'Reprovado');
+    INSERT INTO HISTORICO VALUES (300, 'JAVA', 180, 7.5, 7.5, 7.5, 100, 7.5, 'Reprovado por Faltas');
+    INSERT INTO HISTORICO VALUES (400, 'MOBILE', 180, 3, 3, 3, 40, 3, 'Exame');
+END;
+
+DECLARE
+    CURSOR c_exibe is select media, situacao from funcionario;
+    v_exibe c_exibe%rowtype;
+BEGIN
+    OPEN c_exibe;
+    LOOP
+        FETCH c_exibe into v_exibe;
+        EXIT WHEN c_exibe%NOTFOUND;
+        
+    
+
+
+select * from historico
+Drop table HISTORICO;
+
