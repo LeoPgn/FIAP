@@ -1,0 +1,10 @@
+Criar as tabelas: Cliente, ContaCorrente, Movimentação para gerenciar as operações de uma CC,
+deverão existir dois tipos de CC, as básicas que não permitem saques maiores que o saldo e as especiais
+que permitirão estes saques em até 50% do saldo naquele momento do saque.
+Vc deverá:
+Criar as tabelas para funcionamento do processo - movimentação de CC
+Criar os blocos de programação:
+- um para cadastro do cliente, sua conta.
+- um para cadastro da movimentação, créditos - C e débitos - D, sempre exibir o saldo após a movimentação.
+- um para saque, alertando se é possível ou não realizar o mesmo e exibir o saldo no momento.
+* não esqueça das exceptions
