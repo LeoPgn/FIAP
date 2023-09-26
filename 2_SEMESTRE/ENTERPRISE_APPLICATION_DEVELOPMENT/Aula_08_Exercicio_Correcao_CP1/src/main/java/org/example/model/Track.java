@@ -36,8 +36,12 @@ public class Track {
     @Column(name = "track_released")
     private Date released;
 
-    @OneToMany(mappedBy = "track", orphanRemoval = true)
-    private List<TrackArtist> trackArtist;
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    private List<Artist> Artists;
+
+    @ManyToMany
+    private List<Artist> colaborations;
 
     @OneToMany(mappedBy = "track", orphanRemoval = true)
     private List<AlbumTrack> albumTrack;

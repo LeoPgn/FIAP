@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -22,9 +24,14 @@ public class Artist {
     @Column(name = "artist_type")
     private String type;
 
-    @OneToMany(mappedBy = "artist", orphanRemoval = true)
-    private List<TrackArtist> trackArtist;
+    @OneToMany(mappedBy = "Artists",fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<Track> tracks;
 
-    @OneToMany(mappedBy = "artist", orphanRemoval = true)
-    private List<Album> album;
+    @ManyToMany
+    @JoinTable()
+    public List<Track> collaborations = new ArrayList<Track>();
+
+    @ManyToMany(mappedBy = "featuringArtists")
+    private List<Track> featuredTrack;
 }
