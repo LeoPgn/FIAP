@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "380472277203",
+    "project_id": "tdsps-a1c9b",
+    "storage_bucket": "tdsps-a1c9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:380472277203:android:196f6bac5a0ca1c7bcfc26",
+        "android_client_info": {
+          "package_name": "com.fireBaseAuth.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkI54EVji7fFw6uliLh1_6vt-4U9FW3wU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
