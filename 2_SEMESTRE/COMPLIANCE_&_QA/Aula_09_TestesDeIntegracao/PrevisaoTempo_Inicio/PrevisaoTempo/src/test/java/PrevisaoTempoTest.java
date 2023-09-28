@@ -16,6 +16,7 @@ class PrevisaoTempoTest {
 	private static final String PATH_JSON = "C:\\Users\\marce\\eclipse-workspace\\PrevisaoTempo\\src\\test\\resources\\";
 	private static JSONObject response_200;
 	private static JSONObject response_404;
+	private static JSONObject response_401;
 
 	private PrevisaoTempo previsaoTempo = new PrevisaoTempo();
 	
@@ -36,6 +37,13 @@ class PrevisaoTempoTest {
 		} catch (Exception e) {
 			System.out.println("Arquivo 404 não encontrado");
 		  }
+
+		try {
+			String arquivo = new String(Files.readAllBytes(Paths.get(PATH_JSON+"response_401.json")));
+			response_401 = new JSONObject(arquivo);
+		} catch (Exception e) {
+			System.out.println("Arquivo 401 não encontrado");
+		}
 		
 		//previsaoTempo = new PrevisaoTempo();
 		
