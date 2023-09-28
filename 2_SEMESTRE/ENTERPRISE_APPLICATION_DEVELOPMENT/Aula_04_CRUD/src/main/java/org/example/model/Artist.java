@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.model.base.BaseEntity;
 
 import java.util.List;
 
@@ -12,11 +13,8 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 @Table(name = "artist")
-public class Artist {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "artist_ID", nullable = false)
-    private long id;
+public class Artist extends BaseEntity {
+
     @Column(name = "artist_name")
     private String name;
     @Column(name = "artist_type")

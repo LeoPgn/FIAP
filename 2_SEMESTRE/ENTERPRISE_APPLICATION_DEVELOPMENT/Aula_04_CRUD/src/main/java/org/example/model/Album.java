@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.model.base.BaseEntity;
 
 import java.sql.Date;
 
@@ -12,11 +13,7 @@ import java.sql.Date;
 @AllArgsConstructor
 @Entity
 @Table(name="album")
-public class Album {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "album_ID", nullable = false)
-    private Long id;
+public class Album extends BaseEntity {
     @Column(name = "album_name")
     private String name;
     @Column(name = "album_type")

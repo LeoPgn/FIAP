@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.model.base.BaseEntity;
 
 import java.util.List;
 
@@ -12,11 +13,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="genre")
-public class Genre {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "genre_ID", nullable = false)
-    private Long id;
+public class Genre extends BaseEntity {
+
     @Column(name = "genre_name")
     private String name;
 
