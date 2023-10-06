@@ -1,4 +1,5 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,10 +11,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 
 class PrevisaoTempoTest {
 
-	private static final String PATH_JSON = "C:\\Users\\marce\\eclipse-workspace\\PrevisaoTempo\\src\\test\\resources\\";
+	private static final String PATH_JSON = "C:\\Users\\leoso\\Documents\\FIAP GERAL\\FIAP\\2_SEMESTRE\\COMPLIANCE_&_QA\\Aula_09_TestesDeIntegracao\\PrevisaoTempo_Inicio\\PrevisaoTempo\\src\\test\\resources\\";
 	private static JSONObject response_200;
 	private static JSONObject response_404;
 	private static JSONObject response_401;
@@ -64,6 +66,19 @@ class PrevisaoTempoTest {
     		() -> assertEquals(cidade_teste, cidadeAPI),
     		() -> assertEquals(pais_teste, paisAPI)
     		);
+	}
+
+	@Test
+	public void testPrevisaoPorCidadeMock() throws JSONException, IOException {
+
+		PrevisaoTempo mock = Mockito.mock(PrevisaoTempo.class);
+
+		Mockito.when(mock.getForecastByCityName("Sao Paulo")).thenReturn(response_200);
+
+		JSONObject previsao = mock.getForecastByCityName("Sao Paulo");
+		String respostaHTTP = previsao.getString("cod");
+		assertEquals("200", respostaHTTP);
+
 	}
 	
 	
