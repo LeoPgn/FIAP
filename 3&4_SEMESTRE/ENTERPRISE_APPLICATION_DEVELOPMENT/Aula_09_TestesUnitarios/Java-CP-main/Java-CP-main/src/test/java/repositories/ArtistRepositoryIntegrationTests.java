@@ -12,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 public class ArtistRepositoryIntegrationTests {
-
     private static EntityManagerFactory entityManagerFactory;
     private static EntityManager entityManager;
     private static ArtistRepository artistRepository;
