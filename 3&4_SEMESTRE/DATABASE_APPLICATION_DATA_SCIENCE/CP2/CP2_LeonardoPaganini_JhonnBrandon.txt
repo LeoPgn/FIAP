@@ -1,0 +1,83 @@
+RM97305 - Jhonn Brandon
+RM96562 - Leonardo Paganini
+
+CREATE TABLE Projeto(id_proj NUMBER(3) PRIMARY KEY,
+                    nome_proj VARCHAR(50),
+                    vlr_por_hora NUMBER(4));
+
+CREATE TABLE Funcionario(id_fun NUMBER(3) PRIMARY KEY,
+                        nome_fun VARCHAR(50));
+
+CREATE TABLE Proj_Fun (id_proj NUMBER(3),
+                    id_fun NUMBER(3),
+                    dt_inicio DATE,
+                    dias_trabalhados NUMBER(2),
+                    PRIMARY KEY (id_proj, id_fun),
+                    FOREIGN KEY (id_proj) REFERENCES Projeto(id_proj),
+                    FOREIGN KEY (id_fun) REFERENCES Funcionario(id_fun));
+
+set serveroutput on;
+set verify off;
+
+DECLARE
+-- VARIAVES DE FUNCIONARIO
+    v_id_funcionario NUMBER(3);
+    v_count NUMBER(1);
+    
+-- VARIAVEIS DE PROJETO
+    v_id_projeto number(3);
+    v_nome_projeto varchar2(50);
+    v_valorHora number(4);
+
+-- VARIAVEIS DE ALOCACAO
+    v_id_projeto_alocacao number(3);
+    v_id_funcionario_alocacao number(3);
+    v_dt_inicio date;
+    v_dias_trabalhados number(2);
+    
+-- CURSORES
+    CURSOR c_projeto is
+        SELECT id_proj from Projeto;
+    CURSOR c_funcionario IS
+        SELECT id_fun FROM Funcionario;
+    CURSOR c_aloca IS
+        SELECT id_fun, id_proj FROM Proj_Fun;
+
+-- BLOCO PL/SQL
+BEGIN
+    OPEN c_funcionario;
+        FETCH c_funcionario INTO v_id_funcionario;
+            IF c_funcionario%FOUND THEN
+                DBMS_OUTPUT.PUT_LINE('Funcionário já cadastrado com este ID na tabela.');
+            ELSE
+                INSERT INTO Funcionario(id_fun, nome_fun) VALUES (1, 'Leonardo Paganini');
+                DBMS_OUTPUT.PUT_LINE('Funcionário cadastrado com sucesso.');
+            END IF;
+    CLOSE c_funcionario;
+RM 97305- Jhonn Brandon
+RM 96562 - Leonardo Paganini
+
+    
+-- VERIFICAÇÃO DE PROJETO
+    OPEN c_projeto;
+        FETCH c_projeto INTO v_id_projeto;
+            IF c_projeto%FOUND THEN
+                DBMS_OUTPUT.PUT_LINE('Projeto já existente com este ID na tabela.');
+            ELSE
+                INSERT INTO Projeto(id_proj, nome_proj, vlr_por_hora) VALUES (1, 'Challenge', 2000);
+                DBMS_OUTPUT.PUT_LINE('Projeto cadastrado com sucesso.');
+            END IF;
+    CLOSE c_projeto;
+
+-- VERIFICACAO DE ALOCAÇÃO
+OPEN c_aloca;
+    FETCH c_aloca INTO v_id_projeto_alocacao, v_id_funcionario_alocacao, v_dt_inicio, v_dias_trabalhados;
+        IF c_aloca%FOUND THEN
+            DBMS_OUTPUT.PUT_LINE('Entrada já existente na tabela aloca.');
+        ELSE
+            INSERT INTO Proj_Fun (id_proj, id_fun, dt_inicio, dias_trabalhados) VALUES (v_id_projeto_alocacao, v_id_funcionario_alocacao, v_dt_inicio, v_dias_trabalhados);
+            DBMS_OUTPUT.PUT_LINE('Entrada não encontrada na tabela aloca.');
+        END IF;
+    CLOSE c_aloca;
+END;
+/
