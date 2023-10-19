@@ -1,0 +1,28 @@
+git init - Transforma a pasta no repositorio 
+
+git status - Verifica qual o status e se teve commits no repositorio
+
+git add ArquivoExemplo.js - Adiciona um arquivo no repositório
+
+git commit -m "example"  -  Comentário de commit
+
+git commit -am "example"- Letra a de Add e m de Comentario do commit (Igual o GitHub Desktop faz)
+
+git branch - Ver as branchs do projeto
+
+git checkout -b example - Para criar uma branch nova, utilizamos o comando checkout
+
+git push --set-upstream origin exampleNomeBranch - Para subir essa branch no GitHub
+
+git checkout nomeBranch/master - Para trocar de branch
+
+
+Após dar um clone de um projeto, geralmente ele só baixar a branch master sem as branches, neste caso:
+git fetch - Para baixar todas as outras branches junto com a master 
+
+
+
+
+
+
+
