@@ -1,0 +1,23 @@
+select * from aluno
+desc aluno
+
+insert into aluno values (1, 'Leonardo');
+insert into aluno values (2, 'Marcel');
+commit;
+
+
+create or replace procedure pesquisar_ra_aluno (numero_ra in number) --declarando o parâmetro da função
+is 
+v_nome varchar(50); --declarando uma variável para o bloco de codigo
+begin
+select nome into v_nome
+from aluno
+where ra = numero_ra;
+dbms_output.put_line (v_nome);
+end pesquisar_ra_aluno;
+
+Chamada da função:
+exec pesquisar_ra_aluno(1);
+
+
+
