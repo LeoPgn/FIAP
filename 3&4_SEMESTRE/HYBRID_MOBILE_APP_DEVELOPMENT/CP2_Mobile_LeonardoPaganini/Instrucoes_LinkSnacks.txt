@@ -1,0 +1,16 @@
+Para utilizar o app e navegá-lo, utilize a versão 46.0 ou superior.
+
+Link do Snacks:
+https://snack.expo.dev/@jhonnbrandon/cp2_connectionfirebase
+
+Passo a passo para o resultado solicitado na CP2:
+
+- O app foi desenvolvido no emulador IOS, então navegue pelo mesmo.
+
+- Preencha os dados, lembrando sempre que o e-mail e senha serão utilizados nos próximos passos.
+
+- Após o preenchimento dos dados na tela de cadastro, aperte o botão para confirmar o cadastro.
+
+- Após apertar o botão, clique na opção abaixo do formulário "Já possuí conta? Faça Login"
+
+- Preencha o e-mail e senha cadastrados e aguarde o retorno das informações na tela.
