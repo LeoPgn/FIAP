@@ -1,0 +1,23 @@
+Main notes:
+
+- Primitivas de Kotlin : Int / String / boolean / Double / Char / Float
+
+O Kotlin possuí Implicit Type = Significa que ele entende qual o tipo da variável a partir do valor atribuido nela
+
+- Os dois pontos para declarar a variável chama-se (casting) e serve para dizer que o nome da variável é do tipo String (por exemplo)
+
+Exemplo: 
+val texto: String = "texto"
+
+- Usamos o casting quando inicializamos uma variável sem valor
+
+- Dentro do Kotlin temos dois tipos de variaveis, mutável ou Imutável
+Mutável = var
+Imutável = val
+
+funções usamos "fun" 
+
+Exemplo:
+fun soma (a: Int, b: Int){
+    println(a+b)
+}
