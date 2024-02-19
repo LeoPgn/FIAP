@@ -1,0 +1,16 @@
+
+Criar essas tabelas,
+inserir dados (Inserir, Atualizar e deletar)
+e gerar relatórios (exception):
+
+- produto (id_produto_pk, descr_produto_nn_uk, preco_unit, estoque);
+- ItemVenda (fk_produto_nn, fk_venda_nn, qtde_produto_nn, total_item_nn);
+- Venda (num_venda_pk, dt_venda_nn, total_venda_nn, fk_vendedor_nn);
+- Vendedor (id_Vendedor_pk, nome_vendedor_nn_uk, salario_Vendedor);
+
+
+Aula 2:
+
+- Utilizar cursor (em 1 linha) para fazer update
+- Utilizar cursor (em 1 linha) para fazer delete
+
