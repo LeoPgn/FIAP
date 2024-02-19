@@ -8,9 +8,44 @@ e gerar relatórios (exception):
 - Venda (num_venda_pk, dt_venda_nn, total_venda_nn, fk_vendedor_nn);
 - Vendedor (id_Vendedor_pk, nome_vendedor_nn_uk, salario_Vendedor);
 
+create table vendedor
+(id_vendedor number(4) primary key,
+nm_vendedor varchar(30) unique not null,
+sl_vendedor number(10,2));
+
+create table venda
+(nr_venda number(4) primary key,
+dt_venda date not null,
+tt_venda number(10,2) not null,
+fk_vendedor references vendedor not null);
+
+create table produto
+(cd_produto number(4) primary key,
+ds_produto varchar(30) not null unique,
+pr_unit number(10,2),
+estoque number(10,2));
+
+create table item_venda
+(fk_produto references produto not null,
+fk_venda references venda not null,
+qtd_produto number(10,2) not null,
+tt_item number(10,2) not null);
+
 
 Aula 2:
 
 - Utilizar cursor (em 1 linha) para fazer update
 - Utilizar cursor (em 1 linha) para fazer delete
 
+set serveroutput on;
+
+BEGIN
+    insert into vendedor (&Codigo, '&Nome', &salario);
+    commit;
+    dbms_output.put_line('Dados inseridos com sucesso');
+    exception
+        when dup_val_on_index then 
+            dbms_output.put_line('Código já cadastrado');
+        when others then
+            dbms_output.put_line('Cadastro incompleto');
+END;
