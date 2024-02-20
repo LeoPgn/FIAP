@@ -1,17 +1,19 @@
-create table vendedor(
-id_vendedor number(4) primary key,
-nome_vendedor varchar(30) unique not null,
-salario_vendedor number(10,2)
+CREATE TABLE vendedor (
+    id_vendedor      NUMBER(4) PRIMARY KEY,
+    nome_vendedor    VARCHAR(30) UNIQUE NOT NULL,
+    salario_vendedor NUMBER(10, 2)
 );
 
-create table venda(
-num_venda number(4) primary key,
-dt_venda date not null,
-total_venda number(10,2) not null,
-fk_vendedor references vendedor not null
+CREATE TABLE venda (
+    num_venda   NUMBER(4) PRIMARY KEY,
+    dt_venda    DATE NOT NULL,
+    total_venda NUMBER(10, 2) NOT NULL,
+    fk_vendedor
+        REFERENCES vendedor
+    NOT NULL
 );
 
-create table produto(
+CREATE TABLE produto(
 cd_produto number(4) primary key,
 dscr_produto varchar(30) not null unique,
 );
@@ -36,6 +38,33 @@ BEGIN
     WHEN dup_val_on_index THEN
         dbms_output.put_line('Código já cadastrado');
     WHEN OTHERS THEN
-        dbms_output.put_line('Cadastro incompleto');
+dbms_output.put_line('Cadastro incompleto');
+
+end;
+
+BEGIN
+    UPDATE vendedor
+    SET
+        nm_vendedor = '&nome'
+    WHERE
+        id_vendedor = &código;
+
+    COMMIT;
+    dbms_output.put_line('Dados atualizados com sucesso');
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('Atualização não realizada');
+END;
+
+BEGIN
+    DELETE FROM vendedor
+    WHERE
+        id_vendedor = &código;
+
+    COMMIT;
+    dbms_output.put_line('Dados atualizados com sucesso');
+EXCEPTION
+    WHEN OTHERS THEN
+        dbms_output.put_line('Atualização não realizada');
 END;
         
