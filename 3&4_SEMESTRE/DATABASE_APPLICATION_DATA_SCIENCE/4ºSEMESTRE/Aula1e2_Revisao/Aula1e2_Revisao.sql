@@ -25,17 +25,17 @@ total_item number(10,2) not null
 
 
 
-
 set serveroutput on;
+set  verify off;
 
 BEGIN
     insert into vendedor (&Codigo, '&Nome', &salario);
     commit;
-    dbms_output.put_line('Dados inseridos com sucesso');
-    exception
-        when dup_val_on_index then 
-            dbms_output.put_line('Código já cadastrado');
-        when others then
-            dbms_output.put_line('Cadastro incompleto');
+    dbms_output.put_line('Dados inseridos com sucesso'); 
+    EXCEPTION
+    WHEN dup_val_on_index THEN
+        dbms_output.put_line('Código já cadastrado');
+    WHEN OTHERS THEN
+        dbms_output.put_line('Cadastro incompleto');
 END;
         
