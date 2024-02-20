@@ -11,7 +11,18 @@ total_venda number(10,2) not null,
 fk_vendedor references vendedor not null
 );
 
-create table 
+create table produto(
+cd_produto number(4) primary key,
+dscr_produto varchar(30) not null unique,
+);
+
+create table ItemVenda(
+fk_produto references produto not null,
+fk_venda references venda not null,
+qtde_produto number(10,2) not null,
+total_item number(10,2) not null
+);
+
 
 
 
