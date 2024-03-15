@@ -1,0 +1,15 @@
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\bin\Debug\net8.0\ScrapingGamesCP4.exe
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\bin\Debug\net8.0\ScrapingGamesCP4.deps.json
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\bin\Debug\net8.0\ScrapingGamesCP4.runtimeconfig.json
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\bin\Debug\net8.0\ScrapingGamesCP4.dll
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\bin\Debug\net8.0\ScrapingGamesCP4.pdb
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.AssemblyInfoInputs.cache
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.AssemblyInfo.cs
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.csproj.CoreCompileInputs.cache
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.sourcelink.json
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.dll
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\refint\ScrapingGamesCP4.dll
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.pdb
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ScrapingGamesCP4.genruntimeconfig.cache
+C:\Users\Caju\Documents\FIAP\3&4_SEMESTRE\ENTERPRISE_APPLICATION_DEVELOPMENT\4ºSEMESTRE\ScrapingGamesCP4\ScrapingGamesCP4\obj\Debug\net8.0\ref\ScrapingGamesCP4.dll
