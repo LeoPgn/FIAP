@@ -52,14 +52,35 @@ END;
 -- FUNCAO DE CALCULAR NOVO SALARIO
 
 CREATE OR REPLACE FUNCTION calcular_novo_salario(
-p_id_funcionario IN NUMBER, p_percentual_aumento IN NUMBER) RETURN NUMBER AS
+p_id_funcionario IN NUMBER, 
+p_percentual_aumento IN NUMBER
+) RETURN NUMBER IS
     v_salario_atual salario.salario_anterior%TYPE;
     v_novo_salario salario.novo_salario%TYPE;
 BEGIN
     SELECT salario_anterior INTO v_salario_atual FROM salario WHERE id_funcionario = p_id_funcionario;
         v_novo_salario := v_salario_atual * (1 + (p_percentual_aumento / 100));
     RETURN v_novo_salario;
-END;
+END calcular_novo_salario;
 /
 
 -- PROCEDURE DE EXIBIR OS SALARIOS DE TODOS OS FUNCIONARIOS
+
+CREATE OR REPLACE PROCEDURE exibir_salarios IS
+    v_nome_funcionario funcionario.nome_funcionario%TYPE;
+    v_salario_atual funcionario.salario_atual%TYPE;
+    v_novo_salario NUMBER;
+BEGIN
+    FOR funcionario_rec IN (SELECT id_funcionario, nome_funcionario,
+    salario_atual FROM funcionario) LOOP
+        v_novo_salario := calcular_novo_salario(funcionario_rec.id_funcionario, 10);
+        DBMS_OUTPUT.PUT_LINE('Nome do Funcionário: ' || funcionario_rec.nome_funcionario);
+        DBMS_OUTPUT.PUT_LINE('Salário Anterior: ' || funcionario_rec.salario_atual);
+        DBMS_OUTPUT.PUT_LINE('Novo Salário: ' || v_novo_salario);
+    END LOOP;
+END exibir_salarios;
+/
+BEGIN
+    exibir_salarios;
+END;
+/
