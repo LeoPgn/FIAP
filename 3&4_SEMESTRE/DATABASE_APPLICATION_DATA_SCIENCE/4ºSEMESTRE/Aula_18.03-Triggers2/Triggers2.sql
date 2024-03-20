@@ -1,41 +1,83 @@
--=-=-=-=-=-=-=-=-=-=-=-=-=-=
-Exercícios:
+/*
+ExercÃ­cios:
 
-1.Validação de Dados Antes da Inserção:
-   Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o salário de um novo
-   funcionário está dentro de um intervalo específico, por exemplo, entre 1000 e 10000
-   unidades monetárias.
+1.Validaï¿½ï¿½o de Dados Antes da Inserï¿½ï¿½o:
+   Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o salï¿½rio de um novo
+   funcionï¿½rio estï¿½ dentro de um intervalo especï¿½fico, por exemplo, entre 1000 e 10000
+   unidades monetï¿½rias.
 
-2. Auditoria de Alterações:
-   Implemente um gatilho AFTER INSERT OR UPDATE OR DELETE FOR EACH ROW que registre todas as alterações feitas em uma tabela de funcionários em uma tabela de auditoria, incluindo a data da alteração e o tipo de operação (inserção, atualização ou exclusão).
+2. Auditoria de Alteraï¿½ï¿½es:
+   Implemente um gatilho AFTER INSERT OR UPDATE OR DELETE FOR EACH ROW que registre todas as alteraï¿½ï¿½es feitas em uma tabela de funcionï¿½rios em uma tabela de auditoria,
+       incluindo a data da alteraï¿½ï¿½o e o tipo de operaï¿½ï¿½o (inserï¿½ï¿½o, atualizaï¿½ï¿½o ou exclusï¿½o).
 
-3. Cálculo de Valores Derivados:
+3. Cï¿½lculo de Valores Derivados:
    Crie um gatilho BEFORE INSERT OR UPDATE FOR EACH ROW que calcule automaticamente o
-   salário anual de um funcionário com base em seu salário mensal e armazene-o em uma
+   salï¿½rio anual de um funcionï¿½rio com base em seu salï¿½rio mensal e armazene-o em uma
    coluna separada na tabela.
 
-4. Restrição de Integridade Referencial:
-   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impeça a exclusão de uma linha
-   em uma tabela de departamentos se ainda houver funcionários associados a esse
+4. Restriï¿½ï¿½o de Integridade Referencial:
+   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impeï¿½a a exclusï¿½o de uma linha
+   em uma tabela de departamentos se ainda houver funcionï¿½rios associados a esse
    departamento em outra tabela.
 
-5. Atualização de Contadores:
+5. Atualizaï¿½ï¿½o de Contadores:
    Crie um gatilho AFTER INSERT FOR EACH ROW que atualize um contador de pedidos em uma
    tabela de produtos sempre que um novo pedido for inserido na tabela de pedidos,
    vinculando os produtos aos pedidos.
-   
+
+*/
+
 create table funcionario(
 id_funcionario NUMBER(3),
 nome_funcionario VARCHAR(40),
 salario NUMBER(10)
 );
    
-CREATE OR REPLACE TRIGGER valida_salario
+CREATE OR REPLACE TRIGGER trg_valida_salario
 BEFORE INSERT ON funcionario FOR EACH ROW
 BEGIN 
     IF :NEW.salario < 1000 OR :NEW.salario > 10000 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Salário menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!');
+        RAISE_APPLICATION_ERROR(-20001, 'Salï¿½rio menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!');
     END IF;
 END;
 
-INSERT INTO funcionario VALUES (2, 'Leonardo', 900);
+INSERT INTO funcionario VALUES (1, '', 3000);
+INSERT INTO funcionario VALUES (2, 'Leandro', 9000);
+INSERT INTO funcionario VALUES (3, 'Rosa', 4000);
+
+CREATE SEQUENCE 
+
+CREATE TABLE auditoria(
+    id_funcionario NUMBER(10),
+    antigo_nome_funcionario VARCHAR(40),
+    novo_nome_funcionario VARCHAR(40),
+    antigo_salario NUMBER(10),
+    novo_salario NUMBER(10),
+    dt_alteracao DATE,
+    tipo_operacao VARCHAR(40)
+);
+
+CREATE OR REPLACE TRIGGER TRG_IUD_FUNCIONARIO --IUD = INSERT, UPDATE, DELETE / TRG = TRIGGER
+    AFTER
+        INSERT OR UPDATE OR DELETE ON funcionario FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        INSERT INTO auditoria (id_funcionario, antigo_nome_funcionario, novo_nome_funcionario, antigo_salario,
+                                novo_salario, dt_alteracao, tipo_operacao)
+            VALUES (:NEW.id_funcionario, NULL, :NEW.nome_funcionario, NULL, :NEW.salario, SYSDATE, 'INSERT');
+        ELSE
+            IF UPDATING THEN
+                INSERT INTO auditoria (id_funcionario, antigo_nome_funcionario, novo_nome_funcionario, antigo_salario,
+                                       novo_salario, dt_alteracao, tipo_operacao)
+                VALUES (:NEW.id_funcionario, :OLD.NOME_FUNCIONARIO, :NEW.nome_funcionario, :OLD.salario, :NEW.salario,
+                        SYSDATE, 'UPDATE');
+        ELSE
+            IF DELETING THEN
+                INSERT INTO auditoria (id_funcionario, antigo_nome_funcionario, novo_nome_funcionario, antigo_salario,
+                                       novo_salario, dt_alteracao, tipo_operacao)
+                VALUES (:OLD.id_funcionario, :OLD.nome_funcionario, NULL, :OLD.salario, NULL, SYSDATE, 'DELETE');
+            END IF;
+        END IF;
+    END IF;
+END;
+
