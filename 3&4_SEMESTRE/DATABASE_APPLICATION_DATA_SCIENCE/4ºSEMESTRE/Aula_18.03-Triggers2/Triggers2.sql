@@ -1,19 +1,5 @@
 /*
-Exercícios:
-
-1.Valida��o de Dados Antes da Inser��o:
-   Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o sal�rio de um novo
-   funcion�rio est� dentro de um intervalo espec�fico, por exemplo, entre 1000 e 10000
-   unidades monet�rias.
-
-2. Auditoria de Altera��es:
-   Implemente um gatilho AFTER INSERT OR UPDATE OR DELETE FOR EACH ROW que registre todas as altera��es feitas em uma tabela de funcion�rios em uma tabela de auditoria,
-       incluindo a data da altera��o e o tipo de opera��o (inser��o, atualiza��o ou exclus�o).
-
-3. C�lculo de Valores Derivados:
-   Crie um gatilho BEFORE INSERT OR UPDATE FOR EACH ROW que calcule automaticamente o
-   sal�rio anual de um funcion�rio com base em seu sal�rio mensal e armazene-o em uma
-   coluna separada na tabela.
+Exercícios sobre Gatilhos:
 
 4. Restri��o de Integridade Referencial:
    Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
@@ -25,7 +11,12 @@ Exercícios:
    tabela de produtos sempre que um novo pedido for inserido na tabela de pedidos,
    vinculando os produtos aos pedidos.
 
-*/
+/*
+ 1.Valida��o de Dados Antes da Inser��o:
+   Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o sal�rio de um novo
+   funcion�rio est� dentro de um intervalo espec�fico, por exemplo, entre 1000 e 10000
+   unidades monet�rias.
+ */
 
 create table funcionario(
 id_funcionario NUMBER(3),
@@ -41,11 +32,20 @@ BEGIN
     END IF;
 END;
 
-INSERT INTO funcionario VALUES (1, '', 3000);
-INSERT INTO funcionario VALUES (2, 'Leandro', 9000);
-INSERT INTO funcionario VALUES (3, 'Rosa', 4000);
+CREATE SEQUENCE SEQ_ID_FUNC START WITH 1 INCREMENT BY 1;
+DROP SEQUENCE SEQ_ID_FUNC;
 
-CREATE SEQUENCE 
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000);
+
+SELECT * FROM FUNCIONARIO;
+
+/*
+2. Auditoria de Alteracoes:
+   Implemente um gatilho AFTER INSERT OR UPDATE OR DELETE FOR EACH ROW que registre todas as altera��es feitas em uma tabela de funcion�rios em uma tabela de auditoria,
+   incluindo a data da altera��o e o tipo de opera��o (inser��o, atualiza��o ou exclus�o).
+*/
 
 CREATE TABLE auditoria(
     id_funcionario NUMBER(10),
@@ -80,4 +80,24 @@ BEGIN
         END IF;
     END IF;
 END;
+
+UPDATE FUNCIONARIO SET SALARIO = 7000 WHERE ID_FUNCIONARIO = 3;
+DELETE FROM FUNCIONARIO WHERE ID_FUNCIONARIO = 3;
+
+SELECT * FROM AUDITORIA;
+
+/*
+ 3. C�lculo de Valores Derivados:
+   Crie um gatilho BEFORE INSERT OR UPDATE FOR EACH ROW que calcule automaticamente o
+   sal�rio anual de um funcion�rio com base em seu sal�rio mensal e armazene-o em uma
+   coluna separada na tabela.
+ */
+
+ALTER TABLE AUDITORIA ADD SALARIO_ANUAL NUMBER(10,5);
+SELECT * FROM FUNCIONARIO;
+
+CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
+    BEFORE INSERT OR UPDATE ON FUNCIONARIO FOR EACH ROW
+        IF INSERTING THEN
+
 
