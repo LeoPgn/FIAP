@@ -1,4 +1,3 @@
-/*
 Exercícios sobre Gatilhos:
 
 4. Restri��o de Integridade Referencial:
@@ -12,7 +11,7 @@ Exercícios sobre Gatilhos:
    vinculando os produtos aos pedidos.
 
 /*
- 1.Valida��o de Dados Antes da Inser��o:
+ 1.Validaco de Dados Antes da Insercao:
    Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o sal�rio de um novo
    funcion�rio est� dentro de um intervalo espec�fico, por exemplo, entre 1000 e 10000
    unidades monet�rias.
@@ -35,9 +34,11 @@ END;
 CREATE SEQUENCE SEQ_ID_FUNC START WITH 1 INCREMENT BY 1;
 DROP SEQUENCE SEQ_ID_FUNC;
 
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Gabriel', 500);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Jhonn', 5000);
 
 SELECT * FROM FUNCIONARIO;
 
@@ -56,6 +57,9 @@ CREATE TABLE auditoria(
     dt_alteracao DATE,
     tipo_operacao VARCHAR(40)
 );
+
+DROP TABLE AUDITORIA;
+
 
 CREATE OR REPLACE TRIGGER TRG_IUD_FUNCIONARIO --IUD = INSERT, UPDATE, DELETE / TRG = TRIGGER
     AFTER
@@ -92,12 +96,18 @@ SELECT * FROM AUDITORIA;
    sal�rio anual de um funcion�rio com base em seu sal�rio mensal e armazene-o em uma
    coluna separada na tabela.
  */
-
+ALTER TABLE FUNCIONARIO ADD SALARIO_ANUAL NUMBER(10,5);
 ALTER TABLE AUDITORIA ADD SALARIO_ANUAL NUMBER(10,5);
 SELECT * FROM FUNCIONARIO;
 
 CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
     BEFORE INSERT OR UPDATE ON FUNCIONARIO FOR EACH ROW
-        IF INSERTING THEN
-
+        BEGIN
+            IF INSERTING THEN
+                INSERT FUNCIONARIO SET SALARIO_ANUAL = SALARIO * 12 WHERE ID_FUNCIONARIO = SEQ_ID_FUNC.currval;
+            end if;
+            IF UPDATING THEN
+                UPDATE FUNCIONARIO SET SALARIO_ANUAL = SALARIO * 12 WHERE ID_FUNCIONARIO = SEQ_ID_FUNC.currval;
+            end if;
+        end;
 
