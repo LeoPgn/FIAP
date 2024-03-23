@@ -1,9 +1,4 @@
-Exercícios sobre Gatilhos:
-
-4. Restri��o de Integridade Referencial:
-   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
-   em uma tabela de departamentos se ainda houver funcion�rios associados a esse
-   departamento em outra tabela.
+/*Exercícios sobre Gatilhos:
 
 5. Atualiza��o de Contadores:
    Crie um gatilho AFTER INSERT FOR EACH ROW que atualize um contador de pedidos em uma
@@ -27,20 +22,17 @@ CREATE OR REPLACE TRIGGER trg_valida_salario
 BEFORE INSERT ON funcionario FOR EACH ROW
 BEGIN 
     IF :NEW.salario < 1000 OR :NEW.salario > 10000 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Sal�rio menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!');
+        RAISE_APPLICATION_ERROR(-20001, ('Salario menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!'));
     END IF;
 END;
 
 CREATE SEQUENCE SEQ_ID_FUNC START WITH 1 INCREMENT BY 1;
-DROP SEQUENCE SEQ_ID_FUNC;
 
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Gabriel', 500);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000);
 INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Jhonn', 5000);
-
-SELECT * FROM FUNCIONARIO;
 
 /*
 2. Auditoria de Alteracoes:
@@ -57,8 +49,6 @@ CREATE TABLE auditoria(
     dt_alteracao DATE,
     tipo_operacao VARCHAR(40)
 );
-
-DROP TABLE AUDITORIA;
 
 
 CREATE OR REPLACE TRIGGER TRG_IUD_FUNCIONARIO --IUD = INSERT, UPDATE, DELETE / TRG = TRIGGER
@@ -96,18 +86,19 @@ SELECT * FROM AUDITORIA;
    sal�rio anual de um funcion�rio com base em seu sal�rio mensal e armazene-o em uma
    coluna separada na tabela.
  */
+
 ALTER TABLE FUNCIONARIO ADD SALARIO_ANUAL NUMBER(10,5);
-ALTER TABLE AUDITORIA ADD SALARIO_ANUAL NUMBER(10,5);
 SELECT * FROM FUNCIONARIO;
 
 CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
-    BEFORE INSERT OR UPDATE ON FUNCIONARIO FOR EACH ROW
+    BEFORE INSERT OR UPDATE OF salario on FUNCIONARIO FOR EACH ROW
         BEGIN
-            IF INSERTING THEN
-                INSERT FUNCIONARIO SET SALARIO_ANUAL = SALARIO * 12 WHERE ID_FUNCIONARIO = SEQ_ID_FUNC.currval;
-            end if;
-            IF UPDATING THEN
-                UPDATE FUNCIONARIO SET SALARIO_ANUAL = SALARIO * 12 WHERE ID_FUNCIONARIO = SEQ_ID_FUNC.currval;
-            end if;
+            :NEW.SALARIO_ANUAL := :NEW.SALARIO * 12;
         end;
 
+/*
+4. Restri��o de Integridade Referencial:
+   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
+   em uma tabela de departamentos se ainda houver funcion�rios associados a esse
+   departamento em outra tabela.
+ */
