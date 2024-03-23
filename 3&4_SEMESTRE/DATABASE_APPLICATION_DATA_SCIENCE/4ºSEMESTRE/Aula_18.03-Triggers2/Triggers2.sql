@@ -17,6 +17,7 @@ id_funcionario NUMBER(3),
 nome_funcionario VARCHAR(40),
 salario NUMBER(10)
 );
+
    
 CREATE OR REPLACE TRIGGER trg_valida_salario
 BEFORE INSERT ON funcionario FOR EACH ROW
@@ -28,11 +29,13 @@ END;
 
 CREATE SEQUENCE SEQ_ID_FUNC START WITH 1 INCREMENT BY 1;
 
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Gabriel', 500);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Jhonn', 5000);
+--INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Gabriel', 500, NULL); --teste com salario menor do que 1000, espera-se o erro
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Jhonn', 5000, NULL);
+
+SELECT * FROM FUNCIONARIO;
 
 /*
 2. Auditoria de Alteracoes:
@@ -75,6 +78,7 @@ BEGIN
     END IF;
 END;
 
+--Teste para verificar se está monitorando as operações da tabela funcionario
 UPDATE FUNCIONARIO SET SALARIO = 7000 WHERE ID_FUNCIONARIO = 3;
 DELETE FROM FUNCIONARIO WHERE ID_FUNCIONARIO = 3;
 
@@ -87,7 +91,7 @@ SELECT * FROM AUDITORIA;
    coluna separada na tabela.
  */
 
-ALTER TABLE FUNCIONARIO ADD SALARIO_ANUAL NUMBER(10,5);
+ALTER TABLE FUNCIONARIO ADD SALARIO_ANUAL NUMBER(10,2);
 SELECT * FROM FUNCIONARIO;
 
 CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
@@ -97,8 +101,9 @@ CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
         end;
 
 /*
-4. Restri��o de Integridade Referencial:
+4. Restrição de Integridade Referencial:
    Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
    em uma tabela de departamentos se ainda houver funcion�rios associados a esse
    departamento em outra tabela.
- */
+*/
+
