@@ -1,10 +1,4 @@
-/*
-Exercícios sobre Gatilhos:
-
-4. Restri��o de Integridade Referencial:
-   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
-   em uma tabela de departamentos se ainda houver funcion�rios associados a esse
-   departamento em outra tabela.
+/*Exercícios sobre Gatilhos:
 
 5. Atualiza��o de Contadores:
    Crie um gatilho AFTER INSERT FOR EACH ROW que atualize um contador de pedidos em uma
@@ -12,7 +6,7 @@ Exercícios sobre Gatilhos:
    vinculando os produtos aos pedidos.
 
 /*
- 1.Valida��o de Dados Antes da Inser��o:
+ 1.Validaco de Dados Antes da Insercao:
    Crie um gatilho BEFORE INSERT FOR EACH ROW que valide se o sal�rio de um novo
    funcion�rio est� dentro de um intervalo espec�fico, por exemplo, entre 1000 e 10000
    unidades monet�rias.
@@ -23,21 +17,23 @@ id_funcionario NUMBER(3),
 nome_funcionario VARCHAR(40),
 salario NUMBER(10)
 );
+
    
 CREATE OR REPLACE TRIGGER trg_valida_salario
 BEFORE INSERT ON funcionario FOR EACH ROW
 BEGIN 
     IF :NEW.salario < 1000 OR :NEW.salario > 10000 THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Sal�rio menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!');
+        RAISE_APPLICATION_ERROR(-20001, ('Salario menor que 1000 ou maior que 10000! Insira um valor entre esse intervalo!'));
     END IF;
 END;
 
 CREATE SEQUENCE SEQ_ID_FUNC START WITH 1 INCREMENT BY 1;
-DROP SEQUENCE SEQ_ID_FUNC;
 
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000);
-INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000);
+--INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Gabriel', 500, NULL); --teste com salario menor do que 1000, espera-se o erro
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leonardo', 3000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Leandro', 9000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Rosa', 4000, NULL);
+INSERT INTO FUNCIONARIO VALUES (SEQ_ID_FUNC.nextval, 'Jhonn', 5000, NULL);
 
 SELECT * FROM FUNCIONARIO;
 
@@ -56,6 +52,7 @@ CREATE TABLE auditoria(
     dt_alteracao DATE,
     tipo_operacao VARCHAR(40)
 );
+
 
 CREATE OR REPLACE TRIGGER TRG_IUD_FUNCIONARIO --IUD = INSERT, UPDATE, DELETE / TRG = TRIGGER
     AFTER
@@ -81,6 +78,7 @@ BEGIN
     END IF;
 END;
 
+--Teste para verificar se está monitorando as operações da tabela funcionario
 UPDATE FUNCIONARIO SET SALARIO = 7000 WHERE ID_FUNCIONARIO = 3;
 DELETE FROM FUNCIONARIO WHERE ID_FUNCIONARIO = 3;
 
@@ -93,11 +91,19 @@ SELECT * FROM AUDITORIA;
    coluna separada na tabela.
  */
 
-ALTER TABLE AUDITORIA ADD SALARIO_ANUAL NUMBER(10,5);
+ALTER TABLE FUNCIONARIO ADD SALARIO_ANUAL NUMBER(10,2);
 SELECT * FROM FUNCIONARIO;
 
 CREATE OR REPLACE TRIGGER TRG_IU_CALC_SALARIO_ANUAL
-    BEFORE INSERT OR UPDATE ON FUNCIONARIO FOR EACH ROW
-        IF INSERTING THEN
+    BEFORE INSERT OR UPDATE OF salario on FUNCIONARIO FOR EACH ROW
+        BEGIN
+            :NEW.SALARIO_ANUAL := :NEW.SALARIO * 12;
+        end;
 
+/*
+4. Restrição de Integridade Referencial:
+   Implemente um gatilho BEFORE DELETE FOR EACH ROW que impe�a a exclus�o de uma linha
+   em uma tabela de departamentos se ainda houver funcion�rios associados a esse
+   departamento em outra tabela.
+*/
 
