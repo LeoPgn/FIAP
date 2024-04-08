@@ -49,7 +49,8 @@ ALTER TABLE item_pedido ADD CONSTRAINT itempedido_pk PRIMARY KEY ( item_id, prod
 CREATE TABLE cotacao (
     cotacao_id     NUMBER(10) NOT NULL,
     cotacao_data   DATE NOT NULL,
-    preco_unitario FLOAT(10) NOT NULL
+    preco_unitario FLOAT(10) NOT NULL,
+    produto_produto_id int not null
 );
 ALTER TABLE cotacao ADD CONSTRAINT cotacao_pk PRIMARY KEY ( cotacao_id );
 
@@ -147,6 +148,8 @@ CREATE SEQUENCE SEQ_PEDIDO START WITH 1 INCREMENT BY 1;
 DROP SEQUENCE SEQ_ITEM_PEDIDO;
 DROP SEQUENCE SEQ_PEDIDO;
 
+/* Procedimento para registrar um novo pedido:
+*/
 
 CREATE OR REPLACE PROCEDURE proc_registrar_pedido (
     p_usuario_id IN NUMBER,
@@ -156,13 +159,18 @@ CREATE OR REPLACE PROCEDURE proc_registrar_pedido (
     v_cotacao_id NUMBER;
 BEGIN /* VERIFICANDO SE HÁ UMA COTAÇÃO DISPONIVEL PARA O PRODUTO */
 
-    SELECT cotacao_id INTO v_cotacao_id FROM cotacao
-        WHERE ROWNUM = 1 AND produto_produto_id = p_produto_id ORDER BY cotacao_data DESC;
+    SELECT cotacao_id INTO v_cotacao_id
+    FROM cotacao
+    WHERE ROWNUM = 1 AND produto_produto_id = p_produto_id
+    ORDER BY cotacao_data DESC;
 
     /* VERIFICANDO SE O USUARIO EXISTE */
-    IF NOT EXISTS (SELECT 1 FROM usuario WHERE usuario_id = p_usuario_id) THEN
-        RAISE_APPLICATION_ERROR(-20001, 'Usuário não encontrado');
-    end if;
+    BEGIN
+        SELECT 1 INTO v_cotacao_id FROM usuario WHERE usuario_id = p_usuario_id;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20001, 'Usuário não encontrado.');
+    END;
 
     /* VERIFICANDO SE A COTACAO FOI ENCONTRADA */
     IF v_cotacao_id IS NULL THEN
