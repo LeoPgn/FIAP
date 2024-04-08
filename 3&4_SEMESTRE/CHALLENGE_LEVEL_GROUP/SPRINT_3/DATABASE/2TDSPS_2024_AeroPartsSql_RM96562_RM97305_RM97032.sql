@@ -18,7 +18,7 @@ DROP TABLE produto CASCADE CONSTRAINTS;
 DROP TABLE fornecedor CASCADE CONSTRAINTS;
 
 /*
-Passo 2 - Rode da linha 24 até a 65 para criar as tabelas
+Passo 2 - Rode da linha 24 até a 91 para criar as tabelas e manter as solicitações feitas na Sprint 2
 */
 
 CREATE TABLE usuario (
@@ -27,6 +27,7 @@ CREATE TABLE usuario (
     usuario_email VARCHAR2(50) NOT NULL,
     usuario_senha VARCHAR2(50) NOT NULL
 );
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
 
 CREATE TABLE pedido (
     pedido_id          NUMBER(10) NOT NULL,
@@ -35,6 +36,7 @@ CREATE TABLE pedido (
     usuario_usuario_id NUMBER(10) NOT NULL,
     cotacao_cotacao_id NUMBER(10) NOT NULL
 );
+ALTER TABLE pedido ADD CONSTRAINT pedido_pk PRIMARY KEY ( pedido_id );
 
 CREATE TABLE item_pedido (
     item_id            NUMBER(10) NOT NULL,
@@ -42,12 +44,14 @@ CREATE TABLE item_pedido (
     pedido_pedido_id   NUMBER(10) NOT NULL,
     produto_produto_id NUMBER(10) NOT NULL
 );
+ALTER TABLE item_pedido ADD CONSTRAINT itempedido_pk PRIMARY KEY ( item_id, produto_produto_id );
 
 CREATE TABLE cotacao (
     cotacao_id     NUMBER(10) NOT NULL,
     cotacao_data   DATE NOT NULL,
     preco_unitario FLOAT(10) NOT NULL
 );
+ALTER TABLE cotacao ADD CONSTRAINT cotacao_pk PRIMARY KEY ( cotacao_id );
 
 CREATE TABLE produto (
     produto_id               NUMBER(10) NOT NULL,
@@ -56,6 +60,7 @@ CREATE TABLE produto (
     produto_preco            FLOAT(10) NOT NULL,
     fornecedor_fornecedor_id NUMBER(10) NOT NULL
 );
+ALTER TABLE produto ADD CONSTRAINT produto_pk PRIMARY KEY ( produto_id );
 
 CREATE TABLE fornecedor (
     fornecedor_id       NUMBER(10) NOT NULL,
@@ -63,9 +68,30 @@ CREATE TABLE fornecedor (
     fornecedor_endereco VARCHAR2(50) NOT NULL,
     fornecedor_contato  VARCHAR2(20) NOT NULL
 );
+ALTER TABLE fornecedor ADD CONSTRAINT fornecedor_pk PRIMARY KEY ( fornecedor_id );
+
+ALTER TABLE item_pedido
+    ADD CONSTRAINT itempedido_pedido_fk FOREIGN KEY ( pedido_pedido_id )
+        REFERENCES pedido ( pedido_id );
+
+ALTER TABLE item_pedido
+    ADD CONSTRAINT itempedido_produto_fk FOREIGN KEY ( produto_produto_id )
+        REFERENCES produto ( produto_id );
+
+ALTER TABLE pedido
+    ADD CONSTRAINT pedido_cotacao_fk FOREIGN KEY ( cotacao_cotacao_id )
+        REFERENCES cotacao ( cotacao_id );
+
+ALTER TABLE pedido
+    ADD CONSTRAINT pedido_usuario_fk FOREIGN KEY ( usuario_usuario_id )
+        REFERENCES usuario ( usuario_id );
+
+ALTER TABLE produto
+    ADD CONSTRAINT produto_fornecedor_fk FOREIGN KEY ( fornecedor_fornecedor_id )
+        REFERENCES fornecedor ( fornecedor_id );
 
 /*
-Passo 3 - Rode da linha 71 até a 111 para inserir dados nas tabelas criadas anteriormente
+Passo 3 - Rode da linha 72 até a 111 para inserir dados nas tabelas criadas anteriormente
 */
 
 -- Inserindo dados na tabela 'usuario'
@@ -110,3 +136,50 @@ INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_pro
 INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (4, 15, 4, 2);
 INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (5, 65, 5, 1);
 
+/*
+Passo 4 - Criando as PROCEDURES conforme solicitado na Sprint 3 do projeto
+*/
+
+--criando as sequences que serão utilizadas para facilitar os inserts
+CREATE SEQUENCE SEQ_ITEM_PEDIDO START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE SEQ_PEDIDO START WITH 1 INCREMENT BY 1;
+
+DROP SEQUENCE SEQ_ITEM_PEDIDO;
+DROP SEQUENCE SEQ_PEDIDO;
+
+
+CREATE OR REPLACE PROCEDURE proc_registrar_pedido (
+    p_usuario_id IN NUMBER,
+    p_produto_id IN NUMBER,
+    p_quantidade IN NUMBER
+) AS
+    v_cotacao_id NUMBER;
+BEGIN /* VERIFICANDO SE HÁ UMA COTAÇÃO DISPONIVEL PARA O PRODUTO */
+
+    SELECT cotacao_id INTO v_cotacao_id FROM cotacao
+        WHERE ROWNUM = 1 AND produto_produto_id = p_produto_id ORDER BY cotacao_data DESC;
+
+    /* VERIFICANDO SE O USUARIO EXISTE */
+    IF NOT EXISTS (SELECT 1 FROM usuario WHERE usuario_id = p_usuario_id) THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Usuário não encontrado');
+    end if;
+
+    /* VERIFICANDO SE A COTACAO FOI ENCONTRADA */
+    IF v_cotacao_id IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Cotação não encontrada para o produto');
+
+    /* INSERE O PEDIDO E O ITEM PEDIDO */
+    ELSE
+        INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id)
+        VALUES (SEQ_PEDIDO.NEXTVAL, SYSDATE, 'PENDENTE', p_usuario_id, v_cotacao_id);
+
+        INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id)
+        VALUES (SEQ_ITEM_PEDIDO.NEXTVAL, p_quantidade, SEQ_PEDIDO.CURRVAL, p_produto_id);
+    END IF;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20003, 'Nenhuma cotação encontrada para o produto');
+    WHEN OTHERS THEN
+        RAISE_APPLICATION_ERROR(-20004, 'Erro ao registrar pedido');
+END proc_registrar_pedido;
+/
