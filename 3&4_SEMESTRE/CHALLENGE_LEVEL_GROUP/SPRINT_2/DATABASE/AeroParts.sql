@@ -3,7 +3,7 @@ DROP TABLE fornecedor CASCADE CONSTRAINTS;
 DROP TABLE pedido CASCADE CONSTRAINTS;
 DROP TABLE produto CASCADE CONSTRAINTS;
 DROP TABLE usuario CASCADE CONSTRAINTS;
-DROP TABLE itempedido CASCADE CONSTRAINTS;
+DROP TABLE item_pedido CASCADE CONSTRAINTS;
 
 CREATE TABLE cotacao (
     cotacao_id     NUMBER(10) NOT NULL,
@@ -22,15 +22,14 @@ CREATE TABLE fornecedor (
 
 ALTER TABLE fornecedor ADD CONSTRAINT fornecedor_pk PRIMARY KEY ( fornecedor_id );
 
-CREATE TABLE itempedido (
+CREATE TABLE item_pedido (
     item_id            NUMBER(10) NOT NULL,
     item_quantidade    NUMBER(10) NOT NULL,
     pedido_pedido_id   NUMBER(10) NOT NULL,
     produto_produto_id NUMBER(10) NOT NULL
 );
 
-ALTER TABLE itempedido ADD CONSTRAINT itempedido_pk PRIMARY KEY ( item_id,
-                                                                  produto_produto_id );
+ALTER TABLE item_pedido ADD CONSTRAINT itempedido_pk PRIMARY KEY ( item_id, produto_produto_id );
 
 CREATE TABLE pedido (
     pedido_id          NUMBER(10) NOT NULL,
@@ -61,11 +60,11 @@ CREATE TABLE usuario (
 
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
 
-ALTER TABLE itempedido
+ALTER TABLE item_pedido
     ADD CONSTRAINT itempedido_pedido_fk FOREIGN KEY ( pedido_pedido_id )
         REFERENCES pedido ( pedido_id );
 
-ALTER TABLE itempedido
+ALTER TABLE item_pedido
     ADD CONSTRAINT itempedido_produto_fk FOREIGN KEY ( produto_produto_id )
         REFERENCES produto ( produto_id );
 
@@ -119,11 +118,11 @@ INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco,
 
 -- Inserindo dados na tabela 'itempedido'
 
-INSERT INTO itempedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (1, 87, 1, 5);
-INSERT INTO itempedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (2, 27, 2, 4);
-INSERT INTO itempedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (3, 72, 3, 3);
-INSERT INTO itempedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (4, 15, 4, 2);
-INSERT INTO itempedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (5, 65, 5, 1);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (1, 87, 1, 5);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (2, 27, 2, 4);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (3, 72, 3, 3);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (4, 15, 4, 2);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (5, 65, 5, 1);
 
 commit;
 
