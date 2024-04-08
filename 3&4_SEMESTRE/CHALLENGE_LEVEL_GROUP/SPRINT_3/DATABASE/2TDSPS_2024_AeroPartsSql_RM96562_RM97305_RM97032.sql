@@ -7,7 +7,7 @@
 */
 
 /*
-Passo 1 - Rode da linha 14 até a 19 para excluir as tabelas e garantir que o projeto rode de forma linear
+Passo 1 - Rode da linha 13 até a 18 para excluir as tabelas e garantir que o projeto rode de forma linear
 */
 
 DROP TABLE usuario CASCADE CONSTRAINTS;
@@ -91,7 +91,7 @@ ALTER TABLE produto
         REFERENCES fornecedor ( fornecedor_id );
 
 /*
-Passo 3 - Rode da linha 72 até a 111 para inserir dados nas tabelas criadas anteriormente
+Passo 3 - Rode da linha 98 até a 137 para inserir dados nas tabelas criadas anteriormente
 */
 
 -- Inserindo dados na tabela 'usuario'
