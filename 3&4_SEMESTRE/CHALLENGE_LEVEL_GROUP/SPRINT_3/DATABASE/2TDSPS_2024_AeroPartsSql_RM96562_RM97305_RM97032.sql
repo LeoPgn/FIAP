@@ -233,3 +233,77 @@ END proc_calcular_valor_total_cotacao;
 BEGIN
     proc_calcular_valor_total_cotacao(2);
 end;
+
+/*
+Passo 5 - Criando as funções solicitadas
+*/
+
+/* Function para verificar a disponibilidade de um produto em estoque:
+*/
+
+CREATE OR REPLACE FUNCTION verificar_disponibilidade_produto (
+    p_produto_id          IN NUMBER,
+    p_quantidade          IN NUMBER
+) RETURN BOOLEAN IS
+    v_estoque             NUMBER;
+BEGIN
+    -- Verifica a quantidade disponível em estoque para o produto
+    SELECT SUM(item_quantidade) INTO v_estoque
+    FROM item_pedido
+    WHERE produto_produto_id = p_produto_id;
+
+    IF v_estoque IS NULL THEN
+        RETURN FALSE;
+    END IF;
+
+    -- Retorna verdadeiro se a quantidade em estoque for suficiente
+    RETURN v_estoque >= p_quantidade;
+EXCEPTION
+    WHEN OTHERS THEN
+        RETURN FALSE;
+END verificar_disponibilidade_produto;
+/
+
+/*
+TESTANDO A FUNCTION DE VERIFICAR A DISPONIBILIDADE DO PRODUTO
+*/
+DECLARE
+    v_disponibilidade BOOLEAN;
+BEGIN
+    v_disponibilidade := verificar_disponibilidade_produto(1, 10); -- Supondo que o ID do produto é 1 e a quantidade desejada é 10.
+    IF v_disponibilidade THEN
+        DBMS_OUTPUT.PUT_LINE('Há estoque suficiente.');
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('Estoque insuficiente.');
+    END IF;
+END;
+/
+
+/* Função para calcular o preço médio de um produto:
+  */
+CREATE OR REPLACE FUNCTION calcular_preco_medio_produto (
+    p_produto_id          IN NUMBER
+) RETURN FLOAT IS
+    v_preco_medio         FLOAT(10);
+BEGIN
+    -- Calcula o preço médio do produto
+    SELECT AVG(produto_preco) INTO v_preco_medio
+    FROM produto
+    WHERE produto_id = p_produto_id;
+
+    -- Retorna o preço médio
+    RETURN v_preco_medio;
+END calcular_preco_medio_produto;
+/
+
+/* PASSO 6 - Criando a Trigger solicitado */
+
+CREATE OR REPLACE TRIGGER atualizar_preco_medio_produto
+AFTER INSERT ON cotacao
+FOR EACH ROW
+BEGIN
+    UPDATE produto
+    SET produto_preco = calcular_preco_medio_produto(:NEW.produto_produto_id)
+    WHERE produto_id = :NEW.produto_produto_id;
+END atualizar_preco_medio_produto;
+/
