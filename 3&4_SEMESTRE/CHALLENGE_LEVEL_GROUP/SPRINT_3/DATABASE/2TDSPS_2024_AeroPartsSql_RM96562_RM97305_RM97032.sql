@@ -29,6 +29,15 @@ CREATE TABLE usuario (
 );
 ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
 
+CREATE TABLE produto (
+    produto_id               NUMBER(10) NOT NULL,
+    produto_nome             VARCHAR2(50) NOT NULL,
+    produto_descricao        VARCHAR2(120) NOT NULL,
+    produto_preco            FLOAT(10) NOT NULL,
+    fornecedor_fornecedor_id NUMBER(10) NOT NULL
+);
+ALTER TABLE produto ADD CONSTRAINT produto_pk PRIMARY KEY ( produto_id );
+
 CREATE TABLE pedido (
     pedido_id          NUMBER(10) NOT NULL,
     pedido_data        DATE NOT NULL,
@@ -53,15 +62,6 @@ CREATE TABLE cotacao (
     produto_produto_id int not null
 );
 ALTER TABLE cotacao ADD CONSTRAINT cotacao_pk PRIMARY KEY ( cotacao_id );
-
-CREATE TABLE produto (
-    produto_id               NUMBER(10) NOT NULL,
-    produto_nome             VARCHAR2(50) NOT NULL,
-    produto_descricao        VARCHAR2(120) NOT NULL,
-    produto_preco            FLOAT(10) NOT NULL,
-    fornecedor_fornecedor_id NUMBER(10) NOT NULL
-);
-ALTER TABLE produto ADD CONSTRAINT produto_pk PRIMARY KEY ( produto_id );
 
 CREATE TABLE fornecedor (
     fornecedor_id       NUMBER(10) NOT NULL,
