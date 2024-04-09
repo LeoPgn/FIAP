@@ -110,11 +110,11 @@ INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, for
 INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (5, 'GE Aviation', 'Rua Sim?o Carlos Pimenta', '(555) 123-4567');
 
 -- Inserindo dados na tabela 'cotacao'
-INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario) VALUES (1, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 100.0);
-INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario) VALUES (2, TO_DATE('2023-10-22', 'YYYY-MM-DD'), 90.0);
-INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario) VALUES (3, TO_DATE('2023-10-21', 'YYYY-MM-DD'), 80.0);
-INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario) VALUES (4, TO_DATE('2023-10-20', 'YYYY-MM-DD'), 70.0);
-INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario) VALUES (5, TO_DATE('2023-10-19', 'YYYY-MM-DD'), 60.0);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (1, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 100.0, 1);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (2, TO_DATE('2023-10-22', 'YYYY-MM-DD'), 90.0, 2);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (3, TO_DATE('2023-10-21', 'YYYY-MM-DD'), 80.0, 3);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (4, TO_DATE('2023-10-20', 'YYYY-MM-DD'), 70.0, 4);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (5, TO_DATE('2023-10-19', 'YYYY-MM-DD'), 60.0, 5);
 
 -- Inserindo dados na tabela 'pedido'
 INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (1, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 'Em andamento', 1, 5);
@@ -141,16 +141,16 @@ INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_pro
 Passo 4 - Criando as PROCEDURES conforme solicitado na Sprint 3 do projeto
 */
 
---criando as sequences que serão utilizadas para facilitar os inserts
+--criando as sequences que serão utilizadas para facilitar a procedure em utilizar numeros de ID's sequenciais
 CREATE SEQUENCE SEQ_ITEM_PEDIDO START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE SEQ_PEDIDO START WITH 1 INCREMENT BY 1;
 
-DROP SEQUENCE SEQ_ITEM_PEDIDO;
-DROP SEQUENCE SEQ_PEDIDO;
-
-/* Procedimento para registrar um novo pedido:
+/*
+Procedure para registrar um novo pedido:
+obs: caso esteja utilizando o SQL Developer, deixe sem comentario a linha 153
 */
 
+--SET SERVEROUTPUT ON;
 CREATE OR REPLACE PROCEDURE proc_registrar_pedido (
     p_usuario_id IN NUMBER,
     p_produto_id IN NUMBER,
@@ -191,3 +191,45 @@ EXCEPTION
         RAISE_APPLICATION_ERROR(-20004, 'Erro ao registrar pedido');
 END proc_registrar_pedido;
 /
+
+/* TESTANDO A PROCEDURE DE REGISTRAR PEDIDO
+*/
+BEGIN
+    proc_registrar_pedido(
+        p_usuario_id => 2, -- Substitua pelo ID do usuário desejado
+        p_produto_id => 4, -- Substitua pelo ID do produto desejado
+        p_quantidade => 5    -- Substitua pela quantidade desejada
+    );
+END;
+/
+
+/* Procedure para calcular o valor total de uma cotação:
+   obs: caso esteja utilizando o SQL Developer, deixe sem comentario a linha 210
+*/
+
+--SET SERVEROUTPUT ON;
+CREATE OR REPLACE PROCEDURE proc_calcular_valor_total_cotacao (
+    p_cotacao_id          IN NUMBER
+) AS
+    v_valor_total         FLOAT(10);
+BEGIN
+    -- Calcula o valor total da cotação
+    SELECT SUM(preco_unitario) INTO v_valor_total
+    FROM cotacao
+    WHERE cotacao_id = p_cotacao_id;
+
+    -- Exibe o valor total
+    DBMS_OUTPUT.PUT_LINE('O valor total da cotação é: ' || v_valor_total);
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20005, 'Nenhuma cotação encontrada com o ID especificado.');
+    WHEN OTHERS THEN
+        RAISE_APPLICATION_ERROR(-20006, 'Erro ao calcular valor total da cotação.');
+END proc_calcular_valor_total_cotacao;
+/
+
+/* TESTANDO A PROCEDURE QUE CALCULA O VALOR TOTAL DA COTACAO
+*/
+BEGIN
+    proc_calcular_valor_total_cotacao(2);
+end;
