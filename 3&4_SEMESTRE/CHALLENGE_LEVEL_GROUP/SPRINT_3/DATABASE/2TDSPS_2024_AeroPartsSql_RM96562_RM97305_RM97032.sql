@@ -145,20 +145,24 @@ Passo 4 - Criando as PROCEDURES conforme solicitado na Sprint 3 do projeto
 CREATE SEQUENCE SEQ_ITEM_PEDIDO START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE SEQ_PEDIDO START WITH 1 INCREMENT BY 1;
 
+DROP SEQUENCE SEQ_ITEM_PEDIDO;
+DROP SEQUENCE SEQ_PEDIDO;
+
 /*
 Procedure para registrar um novo pedido:
 obs: caso esteja utilizando o SQL Developer, deixe sem comentario a linha 153
 */
 
---SET SERVEROUTPUT ON;
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
 CREATE OR REPLACE PROCEDURE proc_registrar_pedido (
     p_usuario_id IN NUMBER,
     p_produto_id IN NUMBER,
     p_quantidade IN NUMBER
 ) AS
     v_cotacao_id NUMBER;
-BEGIN /* VERIFICANDO SE HÁ UMA COTAÇÃO DISPONIVEL PARA O PRODUTO */
-
+BEGIN
+    /* VERIFICANDO SE HÁ UMA COTAÇÃO DISPONIVEL PARA O PRODUTO */
     SELECT cotacao_id INTO v_cotacao_id
     FROM cotacao
     WHERE ROWNUM = 1 AND produto_produto_id = p_produto_id
@@ -196,9 +200,9 @@ END proc_registrar_pedido;
 */
 BEGIN
     proc_registrar_pedido(
-        p_usuario_id => 2, -- Substitua pelo ID do usuário desejado
-        p_produto_id => 4, -- Substitua pelo ID do produto desejado
-        p_quantidade => 5    -- Substitua pela quantidade desejada
+        p_usuario_id => 1, -- Substitua pelo ID do usuário desejado
+        p_produto_id => 1, -- Substitua pelo ID do produto desejado
+        p_quantidade => 3    -- Substitua pela quantidade desejada
     );
 END;
 /
@@ -207,7 +211,8 @@ END;
    obs: caso esteja utilizando o SQL Developer, deixe sem comentario a linha 210
 */
 
---SET SERVEROUTPUT ON;
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
 CREATE OR REPLACE PROCEDURE proc_calcular_valor_total_cotacao (
     p_cotacao_id          IN NUMBER
 ) AS
