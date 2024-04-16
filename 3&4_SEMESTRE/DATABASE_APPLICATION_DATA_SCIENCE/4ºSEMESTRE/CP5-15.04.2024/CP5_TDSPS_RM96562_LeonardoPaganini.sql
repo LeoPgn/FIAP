@@ -52,6 +52,36 @@ CREATE TABLE CTR_PRECO(
     preco_antigo NUMBER(5,2),
     preco_novo NUMBER(5,2)
 );
-CREATE SEQUENCE 
 
-INSERT INTO USUARIO VALUES ();
+DROP SEQUENCE SEQ_ID_USUARIO;
+DROP SEQUENCE SEQ_ID_MSC;
+DROP SEQUENCE SEQ_ID_COMPRA;
+
+CREATE SEQUENCE SEQ_ID_USUARIO START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE SEQ_ID_MSC START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE SEQ_ID_COMPRA START WITH 1 INCREMENT BY 1;
+
+INSERT INTO USUARIO (id_usuario, nome_usuario) VALUES (SEQ_ID_USUARIO.nextval, 'João');
+INSERT INTO USUARIO (id_usuario, nome_usuario) VALUES (SEQ_ID_USUARIO.nextval, 'Maria');
+
+INSERT INTO MUSICA (id_musica, titulo_musica) VALUES (SEQ_ID_MSC.nextval, 'Musica A');
+INSERT INTO MUSICA (id_musica, titulo_musica) VALUES (SEQ_ID_MSC.nextval, 'Musica B');
+
+INSERT INTO CTR_PRECO (id_musica, preco_antigo, preco_novo) VALUES (SEQ_ID_MSC.currval, NULL, NULL);
+INSERT INTO CTR_PRECO (id_musica, preco_antigo, preco_novo) VALUES (SEQ_ID_MSC.currval, NULL, NULL);
+
+SET SERVEROUTPUT ON;
+SET VERIFY OFF;
+
+
+DECLARE
+    v_id_compra NUMBER(10) := 1;
+    v_data_compra DATE := SYSDATE;
+    v_total_compra NUMBER := 
+
+BEGIN
+    INSERT INTO COMPRA (id_compra, data_compra, total_compra, id_usuario) VALUES (1, SYSDATE, 10000, 1);
+    INSERT INTO COMPRA (id_compra, data_compra, total_compra, id_usuario) VALUES (2, SYSDATE, 5000, 2);
+END;
+
+-- As tabelas compra e item deverão ser alimentadas por um bloco de programação anônimo;
