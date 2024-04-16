@@ -77,7 +77,7 @@ SET VERIFY OFF;
 DECLARE
     v_id_compra NUMBER(10) := 1;
     v_data_compra DATE := SYSDATE;
-    v_total_compra NUMBER := 
+    v_total_compra NUMBER :=
 
 BEGIN
     INSERT INTO COMPRA (id_compra, data_compra, total_compra, id_usuario) VALUES (1, SYSDATE, 10000, 1);
