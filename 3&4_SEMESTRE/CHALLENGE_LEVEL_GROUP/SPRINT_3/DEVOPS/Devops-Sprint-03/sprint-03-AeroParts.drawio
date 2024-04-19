@@ -1,0 +1,238 @@
+<mxfile host="app.diagrams.net" modified="2024-04-09T01:20:15.610Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="iXJ5J8yKy6eWhyd1375F" version="24.2.2" type="device">
+  <diagram name="Página-1" id="qzSk43vc--1NV8WK1Lic">
+    <mxGraphModel dx="1592" dy="696" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-1" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Serviço de&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;&amp;nbsp;Aplicação&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Services.svg;" vertex="1" parent="1">
+          <mxGeometry x="280" y="220" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-2" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;plano do Serviço&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;de Aplicação&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/app_services/App_Service_Plans.svg;" vertex="1" parent="1">
+          <mxGeometry x="390" y="220" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-3" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Application&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Insights&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/devops/Application_Insights.svg;" vertex="1" parent="1">
+          <mxGeometry x="730" y="220" width="34.92" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-4" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Grupo de&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Recurso&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Resource_Groups.svg;shadow=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="540" width="53.13" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-5" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, system-ui, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Subscrição&lt;/span&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/internet_of_things/Time_Series_Insights_Access_Policies.svg;" vertex="1" parent="1">
+          <mxGeometry x="110" y="610" width="37.06" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-6" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font face=&quot;az_ea_font, Segoe UI, az_font, system-ui, -apple-system, system-ui, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif&quot; color=&quot;#292827&quot;&gt;&lt;span style=&quot;font-size: 13px; background-color: rgb(237, 235, 233);&quot;&gt;Alerta&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/management_governance/Alerts.svg;" vertex="1" parent="1">
+          <mxGeometry x="840" y="230" width="47.86" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-7" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Base de dados&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;SQL Azure&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Database.svg;" vertex="1" parent="1">
+          <mxGeometry x="402.5" y="420" width="37.5" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-8" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;SQL Server&lt;/span&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/databases/SQL_Server.svg;" vertex="1" parent="1">
+          <mxGeometry x="280" y="420" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-9" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Azure&amp;nbsp;&lt;/span&gt;&lt;div&gt;&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Monitor&lt;/span&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/management_governance/Monitor.svg;" vertex="1" parent="1">
+          <mxGeometry x="615" y="220" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-10" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, system-ui, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Internet&lt;/span&gt;" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.cloud;" vertex="1" parent="1">
+          <mxGeometry x="55" y="240" width="50" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-11" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="200" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-12" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="320" as="sourcePoint" />
+            <mxPoint x="480" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-13" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="320" as="sourcePoint" />
+            <mxPoint x="480" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-14" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="320" as="sourcePoint" />
+            <mxPoint x="240" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-15" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="400" as="sourcePoint" />
+            <mxPoint x="480" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-16" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="520" as="sourcePoint" />
+            <mxPoint x="480" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-17" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="480" y="520" as="sourcePoint" />
+            <mxPoint x="480" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-18" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="240" y="400" as="sourcePoint" />
+            <mxPoint x="240" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-19" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="320" as="sourcePoint" />
+            <mxPoint x="560" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-21" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=15;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="200" as="sourcePoint" />
+            <mxPoint x="560" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-22" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="320" as="sourcePoint" />
+            <mxPoint x="560" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-23" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="160" as="sourcePoint" />
+            <mxPoint x="960" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-24" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="200" y="160" as="sourcePoint" />
+            <mxPoint x="200" y="530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-25" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="560" as="sourcePoint" />
+            <mxPoint x="230" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-26" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="960" y="560" as="sourcePoint" />
+            <mxPoint x="960" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-27" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="120" as="sourcePoint" />
+            <mxPoint x="120" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-28" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="640" as="sourcePoint" />
+            <mxPoint x="160" y="640" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-29" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="640" as="sourcePoint" />
+            <mxPoint x="1040" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-30" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="120" y="120" as="sourcePoint" />
+            <mxPoint x="1040" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-31" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="400" as="sourcePoint" />
+            <mxPoint x="360" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-32" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="360" as="sourcePoint" />
+            <mxPoint x="750" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-33" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;" edge="1" parent="1" source="M2rXZ2QsWl9E9yFb1bAS-10">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="230" y="390" as="sourcePoint" />
+            <mxPoint x="240" y="260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-34" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="80" as="sourcePoint" />
+            <mxPoint x="1120" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-35" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="720" as="sourcePoint" />
+            <mxPoint x="1120" y="80" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-36" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1120" y="720" as="sourcePoint" />
+            <mxPoint x="40" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-37" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="40" y="80" as="sourcePoint" />
+            <mxPoint x="40" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-40" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="320" as="sourcePoint" />
+            <mxPoint x="920" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-41" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="400" as="sourcePoint" />
+            <mxPoint x="550" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-42" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="910" y="520" as="sourcePoint" />
+            <mxPoint x="550" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-43" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="920" y="520" as="sourcePoint" />
+            <mxPoint x="920" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-44" value="" style="endArrow=none;dashed=1;html=1;strokeWidth=3;rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;endSize=14;startSize=15;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="560" y="520" as="sourcePoint" />
+            <mxPoint x="560" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-45" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="746.8299999999999" y="400" as="sourcePoint" />
+            <mxPoint x="746.8299999999999" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-46" value="&lt;span style=&quot;color: rgb(41, 40, 39); font-family: az_ea_font, &amp;quot;Segoe UI&amp;quot;, az_font, system-ui, -apple-system, &amp;quot;system-ui&amp;quot;, Roboto, Oxygen, Ubuntu, Cantarell, &amp;quot;Open Sans&amp;quot;, &amp;quot;Helvetica Neue&amp;quot;, sans-serif; font-size: 13px; text-align: left; background-color: rgb(237, 235, 233);&quot;&gt;Registo de contentor&lt;/span&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/containers/Container_Registries.svg;" vertex="1" parent="1">
+          <mxGeometry x="606" y="426.5" width="68" height="61" as="geometry" />
+        </mxCell>
+        <mxCell id="M2rXZ2QsWl9E9yFb1bAS-49" value="&lt;div style=&quot;text-align: left;&quot;&gt;&lt;font face=&quot;az_ea_font, Segoe UI, az_font, system-ui, -apple-system, system-ui, Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif&quot; color=&quot;#292827&quot;&gt;&lt;span style=&quot;font-size: 13px; background-color: rgb(237, 235, 233);&quot;&gt;Dockerfile&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/File.svg;" vertex="1" parent="1">
+          <mxGeometry x="810" y="427.5" width="47.88" height="59" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
