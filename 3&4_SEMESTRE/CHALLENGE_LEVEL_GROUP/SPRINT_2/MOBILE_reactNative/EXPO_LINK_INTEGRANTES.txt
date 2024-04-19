@@ -1,0 +1,11 @@
+LINK:
+
+https://snack.expo.dev/@leopgn/sprint2_challenge?platform=ios
+
+INTEGRANTES:
+
+Leonardo Paganini RM96562 
+Matheus Leite RM96893
+Jhonn Brandon RM97305 
+Regina Pompeo RM97032
+
