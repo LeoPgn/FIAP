@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbarContainer{
+    flex: 1;
+    height: 100px;
+    width: 100%;
+    background-color: aqua;
+}
+
+.logoContainer{
+    flex: 1;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
