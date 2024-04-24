@@ -41,4 +41,7 @@
     height: 100px;
     background-color: black;
 }
-
+.text{
+    writing-mode: vertical-rl;
+    
+}
