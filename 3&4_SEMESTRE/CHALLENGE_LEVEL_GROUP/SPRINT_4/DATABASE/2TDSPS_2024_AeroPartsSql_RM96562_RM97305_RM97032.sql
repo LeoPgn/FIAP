@@ -1,0 +1,359 @@
+/*
+ 2TDSPS - Challenge Level Group - 4° Sprint - Grupo: AeroParts
+ Integrantes:
+ RM96562 - Leonardo Paganini
+ RM97032 - Regina Pompeo
+ RM97305 - Jhonn Brandon
+*/
+
+/*
+Passo 1 - Rode da linha 13 até a 18 para excluir as tabelas e garantir que o projeto rode de forma linear
+*/
+
+DROP TABLE usuario CASCADE CONSTRAINTS;
+DROP TABLE pedido CASCADE CONSTRAINTS;
+DROP TABLE item_pedido CASCADE CONSTRAINTS;
+DROP TABLE cotacao CASCADE CONSTRAINTS;
+DROP TABLE produto CASCADE CONSTRAINTS;
+DROP TABLE fornecedor CASCADE CONSTRAINTS;
+
+/*
+Passo 2 - Rode da linha 24 até a 91 para criar as tabelas e manter as solicitações feitas na Sprint 2
+*/
+
+CREATE TABLE usuario (
+    usuario_id    NUMBER(10) NOT NULL,
+    usuario_nome  VARCHAR2(50) NOT NULL,
+    usuario_email VARCHAR2(50) NOT NULL,
+    usuario_senha VARCHAR2(50) NOT NULL
+);
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
+
+
+CREATE TABLE produto (
+    produto_id               NUMBER(10) NOT NULL,
+    produto_nome             VARCHAR2(50) NOT NULL,
+    produto_descricao        VARCHAR2(120) NOT NULL,
+    produto_preco            FLOAT(10) NOT NULL,
+    fornecedor_fornecedor_id NUMBER(10) NOT NULL
+);
+ALTER TABLE produto ADD CONSTRAINT produto_pk PRIMARY KEY ( produto_id );
+
+CREATE TABLE pedido (
+    pedido_id          NUMBER(10) NOT NULL,
+    pedido_data        DATE NOT NULL,
+    pedido_status      VARCHAR2(50) NOT NULL,
+    usuario_usuario_id NUMBER(10) NOT NULL,
+    cotacao_cotacao_id NUMBER(10) NOT NULL
+);
+ALTER TABLE pedido ADD CONSTRAINT pedido_pk PRIMARY KEY ( pedido_id );
+
+CREATE TABLE item_pedido (
+    item_id            NUMBER(10) NOT NULL,
+    item_quantidade    NUMBER(10) NOT NULL,
+    pedido_pedido_id   NUMBER(10) NOT NULL,
+    produto_produto_id NUMBER(10) NOT NULL
+);
+ALTER TABLE item_pedido ADD CONSTRAINT itempedido_pk PRIMARY KEY ( item_id, produto_produto_id );
+
+CREATE TABLE cotacao (
+    cotacao_id     NUMBER(10) NOT NULL,
+    cotacao_data   DATE NOT NULL,
+    preco_unitario FLOAT(10) NOT NULL,
+    produto_produto_id int not null
+);
+ALTER TABLE cotacao ADD CONSTRAINT cotacao_pk PRIMARY KEY ( cotacao_id );
+
+CREATE TABLE fornecedor (
+    fornecedor_id       NUMBER(10) NOT NULL,
+    fornecedor_nome     VARCHAR2(50) NOT NULL,
+    fornecedor_endereco VARCHAR2(50) NOT NULL,
+    fornecedor_contato  VARCHAR2(20) NOT NULL
+);
+ALTER TABLE fornecedor ADD CONSTRAINT fornecedor_pk PRIMARY KEY ( fornecedor_id );
+
+ALTER TABLE item_pedido
+    ADD CONSTRAINT itempedido_pedido_fk FOREIGN KEY ( pedido_pedido_id )
+        REFERENCES pedido ( pedido_id );
+
+ALTER TABLE item_pedido
+    ADD CONSTRAINT itempedido_produto_fk FOREIGN KEY ( produto_produto_id )
+        REFERENCES produto ( produto_id );
+
+ALTER TABLE pedido
+    ADD CONSTRAINT pedido_cotacao_fk FOREIGN KEY ( cotacao_cotacao_id )
+        REFERENCES cotacao ( cotacao_id );
+
+ALTER TABLE pedido
+    ADD CONSTRAINT pedido_usuario_fk FOREIGN KEY ( usuario_usuario_id )
+        REFERENCES usuario ( usuario_id );
+
+ALTER TABLE produto
+    ADD CONSTRAINT produto_fornecedor_fk FOREIGN KEY ( fornecedor_fornecedor_id )
+        REFERENCES fornecedor ( fornecedor_id );
+
+/*
+Passo 3 - Rode da linha 98 até a 137 para inserir dados nas tabelas criadas anteriormente
+*/
+
+-- Inserindo dados na tabela 'usuario'
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (1, 'João', 'joao@email.com', 'senha123');
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (2, 'Maria', 'maria@email.com', 'senha456');
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (3, 'Pedro', 'pedro@email.com', 'senha789');
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (4, 'Ana', 'ana@email.com', 'senha101');
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (5, 'Carlos', 'carlos@email.com', 'senha202');
+
+select * from usuario;
+
+-- Inserindo dados na tabela 'fornecedor'
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (1, 'PartsBase', 'Rua Miguel Cervantes Rodrigues', '(123) 456-7890');
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (2, 'Boeing', 'Travessa Helma', '(555) 987-6543');
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (3, 'Airbus', 'Avenida Nove de Julho', '(321) 789-0123');
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (4, 'Honeywell Aerospace', 'Rua Nossa Senhora de Lourdes', '(888) 234-5678');
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (5, 'GE Aviation', 'Rua Sim?o Carlos Pimenta', '(555) 123-4567');
+
+-- Inserindo dados na tabela 'cotacao'
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (1, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 100.0, 1);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (2, TO_DATE('2023-10-22', 'YYYY-MM-DD'), 90.0, 2);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (3, TO_DATE('2023-10-21', 'YYYY-MM-DD'), 80.0, 3);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (4, TO_DATE('2023-10-20', 'YYYY-MM-DD'), 70.0, 4);
+INSERT INTO cotacao (cotacao_id, cotacao_data, preco_unitario, produto_produto_id) VALUES (5, TO_DATE('2023-10-19', 'YYYY-MM-DD'), 60.0, 5);
+
+-- Inserindo dados na tabela 'pedido'
+INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (1, TO_DATE('2023-10-23', 'YYYY-MM-DD'), 'Em andamento', 1, 5);
+INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (2, TO_DATE('2023-10-22', 'YYYY-MM-DD'), 'Concluído', 2, 4);
+INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (3, TO_DATE('2023-10-21', 'YYYY-MM-DD'), 'Em andamento', 3, 3);
+INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (4, TO_DATE('2023-10-20', 'YYYY-MM-DD'), 'Concluído', 4, 2);
+INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id) VALUES (5, TO_DATE('2023-10-19', 'YYYY-MM-DD'), 'Em andamento', 5, 1);
+
+-- Inserindo dados na tabela 'produto'
+INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco, fornecedor_fornecedor_id) VALUES (1, 'Parafusos de Aeronave', 'Parafusos de alta resist?ncia usados na montagem e manuteção de aeronaves.', 2.30, 1);
+INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco, fornecedor_fornecedor_id) VALUES (2, 'Filtros de Combust?vel', 'Filtros que removem impurezas do combustível antes que ele entre no motor da aeronave.', 25.0, 2);
+INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco, fornecedor_fornecedor_id) VALUES (3, 'Baterias de Avião', 'Baterias de aeronaves para fornecer energia elétrica a sistemas e componentes eletrénicos.', 150.0, 3);
+INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco, fornecedor_fornecedor_id) VALUES (4, 'Velas de Ignição', 'Velas de ignição especiais para motores de aeronaves a pistão.', 10.0, 4);
+INSERT INTO produto (produto_id, produto_nome, produto_descricao, produto_preco, fornecedor_fornecedor_id) VALUES (5, 'Luzes de Navegação', 'Luzes de navegação usadas para indicar a posição e direção de uma aeronave durante o voo.', 30.0, 5);
+
+-- Inserindo dados na tabela 'item_pedido'
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (1, 87, 1, 5);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (2, 27, 2, 4);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (3, 72, 3, 3);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (4, 15, 4, 2);
+INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id) VALUES (5, 65, 5, 1);
+
+--criando as sequences que serão utilizadas para facilitar a procedure em utilizar numeros de ID's sequenciais
+CREATE SEQUENCE SEQ_ITEM_PEDIDO START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE SEQ_PEDIDO START WITH 1 INCREMENT BY 1;
+
+DROP SEQUENCE SEQ_ITEM_PEDIDO;
+DROP SEQUENCE SEQ_PEDIDO;
+
+/*-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=*/
+--SPRINT 4 - AEROPARTS
+
+--Criando os packages e inserindos as procs dentro deles
+
+CREATE OR REPLACE PACKAGE pedidos AS
+    PROCEDURE proc_registrar_pedido (
+        p_usuario_id IN NUMBER,
+        p_produto_id IN NUMBER,
+        p_quantidade IN NUMBER
+    );
+END pedidos;
+/
+
+CREATE OR REPLACE PACKAGE BODY pedidos AS
+    PROCEDURE proc_registrar_pedido (
+        p_usuario_id IN NUMBER,
+        p_produto_id IN NUMBER,
+        p_quantidade IN NUMBER
+    ) AS
+        v_cotacao_id NUMBER;
+    BEGIN
+        -- VERIFICANDO SE HÁ UMA COTAÇÃO DISPONIVEL PARA O PRODUTO
+        SELECT cotacao_id INTO v_cotacao_id
+        FROM cotacao
+        WHERE ROWNUM = 1 AND produto_produto_id = p_produto_id
+        ORDER BY cotacao_data DESC;
+
+        -- VERIFICANDO SE O USUARIO EXISTE
+        BEGIN
+            SELECT 1 INTO v_cotacao_id FROM usuario WHERE usuario_id = p_usuario_id;
+        EXCEPTION
+            WHEN NO_DATA_FOUND THEN
+                RAISE_APPLICATION_ERROR(-20001, 'Usuário não encontrado.');
+        END;
+
+        -- VERIFICANDO SE A COTACAO FOI ENCONTRADA
+        IF v_cotacao_id IS NULL THEN
+            RAISE_APPLICATION_ERROR(-20002, 'Cotação não encontrada para o produto');
+
+        -- INSERE O PEDIDO E O ITEM PEDIDO
+        ELSE
+            INSERT INTO pedido (pedido_id, pedido_data, pedido_status, usuario_usuario_id, cotacao_cotacao_id)
+            VALUES (SEQ_PEDIDO.NEXTVAL, SYSDATE, 'PENDENTE', p_usuario_id, v_cotacao_id);
+
+            INSERT INTO item_pedido (item_id, item_quantidade, pedido_pedido_id, produto_produto_id)
+            VALUES (SEQ_ITEM_PEDIDO.NEXTVAL, p_quantidade, SEQ_PEDIDO.CURRVAL, p_produto_id);
+        END IF;
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20003, 'Nenhuma cotação encontrada para o produto');
+        WHEN OTHERS THEN
+            RAISE_APPLICATION_ERROR(-20004, 'Erro ao registr ar pedido');
+    END proc_registrar_pedido;
+END pedidos;
+/
+
+--INSERINDO A PROC DE COTAÇÃO DENTRO DE UM PACKAGE SEPARADO
+CREATE OR REPLACE PACKAGE cotacoes AS
+    PROCEDURE proc_calcular_valor_total_cotacao (
+        p_cotacao_id IN NUMBER
+    );
+END cotacoes;
+/
+
+CREATE OR REPLACE PACKAGE BODY cotacoes AS
+    PROCEDURE proc_calcular_valor_total_cotacao (
+        p_cotacao_id IN NUMBER
+    ) AS
+        v_valor_total FLOAT(10);
+    BEGIN
+        -- Calcula o valor total da cotação
+        SELECT SUM(preco_unitario) INTO v_valor_total
+        FROM cotacao
+        WHERE cotacao_id = p_cotacao_id;
+
+        -- Exibe o valor total
+        DBMS_OUTPUT.PUT_LINE('O valor total da cotação é: ' || v_valor_total);
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+            RAISE_APPLICATION_ERROR(-20005, 'Nenhuma cotação encontrada com o ID especificado.');
+        WHEN OTHERS THEN
+            RAISE_APPLICATION_ERROR(-20006, 'Erro ao calcular valor total da cotação.');
+    END proc_calcular_valor_total_cotacao;
+END cotacoes;
+/
+
+--INSERINDO A FUNC DE VALIDAR PRODUTO NO ESTOQUE DENTRO DO PACKAGE
+CREATE OR REPLACE PACKAGE estoque AS
+    FUNCTION verificar_disponibilidade_produto (
+        p_produto_id IN NUMBER,
+        p_quantidade IN NUMBER
+    ) RETURN BOOLEAN;
+END estoque;
+/
+
+CREATE OR REPLACE PACKAGE BODY estoque AS
+    FUNCTION verificar_disponibilidade_produto (
+        p_produto_id IN NUMBER,
+        p_quantidade IN NUMBER
+    ) RETURN BOOLEAN IS
+        v_estoque NUMBER;
+    BEGIN
+        -- Verifica a quantidade disponível em estoque para o produto
+        SELECT SUM(item_quantidade) INTO v_estoque
+        FROM item_pedido
+        WHERE produto_produto_id = p_produto_id;
+
+        IF v_estoque IS NULL THEN
+            RETURN FALSE;
+        END IF;
+
+        -- Retorna verdadeiro se a quantidade em estoque for suficiente
+        RETURN v_estoque >= p_quantidade;
+    EXCEPTION
+        WHEN OTHERS THEN
+            RETURN FALSE;
+    END verificar_disponibilidade_produto;
+END estoque;
+/
+
+--CRIANDO UM PACKAGE PARA APENAS VALORES/FUNCIONALIDADES RELACIONADOS AOS PRODUTOS
+CREATE OR REPLACE PACKAGE valor IS
+    FUNCTION calcular_preco_medio_produto (
+        p_produto_id          IN NUMBER
+    ) RETURN FLOAT IS
+        v_preco_medio         FLOAT(10);
+    BEGIN
+        -- Calcula o preço médio do produto
+        SELECT AVG(produto_preco) INTO v_preco_medio
+        FROM produto
+        WHERE produto_id = p_produto_id;
+
+        -- Retorna o preço médio
+        RETURN v_preco_medio;
+    END calcular_preco_medio_produto;
+END valor;
+/
+
+-- CRIANDO AS DUAS TRIGGERS REQUISITADAS
+
+--CRIAMOS UMA NOVA TABELA PARA GRAVAR OS DADOS QUANDO A TRIGGER FOR ATIVADA NO MOMENTO DO INSERT DE DADOS DA TABELA USUARIO
+CREATE TABLE AuditLog (
+    AuditID NUMBER(10) NOT NULL,
+    TableName VARCHAR2(50) NOT NULL,
+    Operation VARCHAR2(50) NOT NULL,
+    UserName VARCHAR2(50) NOT NULL,
+    Timestamp DATE NOT NULL,
+    Data CLOB NOT NULL
+);
+
+--TRIGGER PARA GRAVAÇÃO DOS DADOS NA TABELA DE AUDITORIA DO USUARIO
+
+CREATE OR REPLACE TRIGGER trg_usuario_insert
+AFTER INSERT ON usuario
+FOR EACH ROW
+DECLARE
+    v_data CLOB;
+BEGIN
+    v_data := '{' ||
+              '"usuario_id": ' || :NEW.usuario_id || ', ' ||
+              '"usuario_nome": "' || :NEW.usuario_nome || '", ' ||
+              '"usuario_email": "' || :NEW.usuario_email || '", ' ||
+              '"usuario_senha": "' || :NEW.usuario_senha || '", ' ||
+              '"usuario_insercao": "' || SYS_CONTEXT('USERENV', 'SESSION_USER') || '"' ||
+              '}';
+
+    INSERT INTO AuditLog (AuditID, TableName, Operation, UserName, Timestamp, Data)
+    VALUES (SEQ_AUDITID.NEXTVAL, 'usuario', 'INSERT', SYS_CONTEXT('USERENV', 'SESSION_USER'), SYSTIMESTAMP, v_data);
+END;
+
+--PARA VALIDAR QUE DEU CERTO, RODE O SCRIPT DA LINHA 321 E APÓS, O SELECT DA TABELA NA LINHA 325
+
+INSERT INTO usuario (usuario_id, usuario_nome, usuario_email, usuario_senha) VALUES (7, 'Bruno', 'BGs@email.com', 'senha208');
+
+SELECT * FROM AUDITLOG;
+
+--CRIANDO UMA NOVA TABELA PARA GUARDAR DADOS DA SEGUNDA TRIGGER
+CREATE TABLE AuditFornecedor (
+    AuditID NUMBER(10) NOT NULL,
+    TableName VARCHAR2(50) NOT NULL,
+    Operation VARCHAR2(50) NOT NULL,
+    UserName VARCHAR2(50) NOT NULL,
+    Timestamp DATE NOT NULL,
+    Data CLOB NOT NULL
+);
+
+CREATE OR REPLACE TRIGGER trg_fornecedor_insert
+AFTER INSERT ON fornecedor
+FOR EACH ROW
+DECLARE
+    v_data CLOB;
+BEGIN
+    v_data := '{' ||
+              '"fornecedor_id": ' || :NEW.fornecedor_id || ', ' ||
+              '"fornecedor_nome": "' || :NEW.fornecedor_nome || '", ' ||
+              '"fornecedor_endereco": "' || :NEW.fornecedor_endereco || '", ' ||
+              '"fornecedor_contato": "' || :NEW.fornecedor_contato || '", ' ||
+              '"usuario_insercao": "' || SYS_CONTEXT('USERENV', 'SESSION_USER') || '"' ||
+              '}';
+
+    INSERT INTO AuditFornecedor (AuditID, TableName, Operation, UserName, Timestamp, Data)
+    VALUES (SEQ_AUDITID.NEXTVAL, 'fornecedor', 'INSERT', SYS_CONTEXT('USERENV', 'SESSION_USER'), SYSTIMESTAMP, v_data);
+END;
+
+--PARA VALIDAR QUE DEU CERTO, RODE O SCRIPT DA LINHA 357 E APÓS, O SELECT DA TABELA NA LINHA 359
+
+INSERT INTO fornecedor (fornecedor_id, fornecedor_nome, fornecedor_endereco, fornecedor_contato)VALUES (1, 'Hugo Gloss', 'Rua Travessa Cervantes Montana', '(55)119898264');
+
+select * from AuditFornecedor;
