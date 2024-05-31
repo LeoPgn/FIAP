@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Cria" directorySegmentName="seg_0" id="A5E0D873-5835-32B1-51BE-D772455B4A66">
+<createdBy>Caju</createdBy>
+<createdTime>2024-05-31 23:17:58 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<sourcePk>30CAFDF5-F69C-A276-955D-B7AE3A428CEA</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>539C575D-8933-C61E-0178-A7CC3B0F68D0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>CDE699DB-0CA4-C085-5218-ABE03842F532</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
