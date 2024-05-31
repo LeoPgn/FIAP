@@ -13,7 +13,7 @@ CREATE TABLE USUARIO(
 CREATE TABLE EQUIPAMENTO(
     id_equipamento NUMBER (10) PRIMARY KEY,
     tipo_equipamento VARCHAR2 (40),
-    dt_instalacao DATE,
+    dt_instalacao DATE NOT NULL,
     status_equipamento VARCHAR2(10),
     proprietario REFERENCES PARCEIROS(nome_parceiro),
     local_equipamento REFERENCES LOCAL_EQUIPAMENT0(id_local)
@@ -22,23 +22,25 @@ CREATE TABLE EQUIPAMENTO(
 CREATE TABLE LOCAL_EQUIPAMENT0(
     id_local NUMBER(10) PRIMARY KEY,
     nome_local VARCHAR2(100),
-    latitude_local FLOAT(40),
-    longitude_local FLOAT(40)
+    latitude_local VARCHAR2(40),
+    longitude_local VARCHAR2(40)
 );
 
 CREATE TABLE RELATORIO(
     id_relatorio NUMBER(10) PRIMARY KEY,
-    descr_relatorio VARCHAR2(400),
+    descr_relatorio VARCHAR2(500),
     dt_relatorio DATE,
-    foto_relatorio BLOB,
-    responsavel_relatorio REFERENCES USUARIO (nome_usuario),
-    id_equipamento REFERENCES EQUIPAMENTO (id_equipamento)
+    imagem_relatorio BLOB,
+    responsavel_relatorio REFERENCES USUARIO (id_usuario),
+    id_equipamento REFERENCES EQUIPAMENTO (id_equipamento),
+    responsavel_manutencao REFERENCES MANUTENCAO_EQUIPAMENTO(responsavel_manutencao)--ALTERAR DE ACORDO COM A TABELA INFORMADA NO WHATSAPP
 );
 
 CREATE TABLE LEITURA_EQUIPAMENTO(
     id_leitura NUMBER(10) PRIMARY KEY,
     dt_leitura DATE NOT NULL,
     tipo_leitura VARCHAR2(40),
+    valor_leitura NUMBER(3,2),
     id_equipamento REFERENCES EQUIPAMENTO(id_equipamento),
     id_local REFERENCES LOCAL_EQUIPAMENT0(id_local),
     proprietario REFERENCES PARCEIROS(nome_parceiro)
@@ -47,6 +49,7 @@ CREATE TABLE LEITURA_EQUIPAMENTO(
 CREATE TABLE MANUTENCAO_EQUIPAMENTO(
     id_manutencao NUMBER(10) PRIMARY KEY,
     dt_manutencao DATE NOT NULL,
+    tipo_manutencao VARCHAR2(100),
     responsavel_manutencao REFERENCES USUARIO(id_usuario),
     id_equipamento REFERENCES EQUIPAMENTO(id_equipamento),
     proprietario REFERENCES PARCEIROS(nome_parceiro)
