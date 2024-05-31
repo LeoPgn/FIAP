@@ -14,7 +14,9 @@ CREATE TABLE EQUIPAMENTO(
     id_equipamento NUMBER (10) PRIMARY KEY,
     tipo_equipamento VARCHAR2 (40),
     dt_instalacao DATE,
-    status_equipamento VARCHAR2(10)
+    status_equipamento VARCHAR2(10),
+    proprietario REFERENCES PARCEIROS(nome_parceiro),
+    local_equipamento REFERENCES LOCAL_EQUIPAMENT0(id_local)
 );
 
 CREATE TABLE LOCAL_EQUIPAMENT0(
@@ -28,6 +30,43 @@ CREATE TABLE RELATORIO(
     id_relatorio NUMBER(10) PRIMARY KEY,
     descr_relatorio VARCHAR2(400),
     dt_relatorio DATE,
-    responsavel_relatorio REFERENCES EQUIPAMENTO (id_equipamento),
-    foto_relatorio
+    foto_relatorio BLOB,
+    responsavel_relatorio REFERENCES USUARIO (nome_usuario),
+    id_equipamento REFERENCES EQUIPAMENTO (id_equipamento)
+);
+
+CREATE TABLE LEITURA_EQUIPAMENTO(
+    id_leitura NUMBER(10) PRIMARY KEY,
+    dt_leitura DATE NOT NULL,
+    tipo_leitura VARCHAR2(40),
+    id_equipamento REFERENCES EQUIPAMENTO(id_equipamento),
+    id_local REFERENCES LOCAL_EQUIPAMENT0(id_local),
+    proprietario REFERENCES PARCEIROS(nome_parceiro)
+);
+
+CREATE TABLE MANUTENCAO_EQUIPAMENTO(
+    id_manutencao NUMBER(10) PRIMARY KEY,
+    dt_manutencao DATE NOT NULL,
+    responsavel_manutencao REFERENCES USUARIO(id_usuario),
+    id_equipamento REFERENCES EQUIPAMENTO(id_equipamento),
+    proprietario REFERENCES PARCEIROS(nome_parceiro)
+);
+
+CREATE TABLE ALERTA_EQUIPAMENTO(
+    id_alerta NUMBER(10) PRIMARY KEY,
+    dt_alerta DATE NOT NULL,
+    nivel_alerta VARCHAR2(40),
+    descr_alerta VARCHAR2(400),
+    status_alerta VARCHAR2(40),
+    alerta_parceiro REFERENCES PARCEIROS(id_parceiro),
+    alerta_usuario REFERENCES USUARIO(id_usuario)
+);
+
+CREATE TABLE PARCEIROS(
+    id_parceiro NUMBER(10) PRIMARY KEY,
+    nome_parceiro VARCHAR2(100),
+    cnpj_parceiro VARCHAR2(100),
+    endereco_parceiro VARCHAR2(100),
+    contato_parceiro VARCHAR2(11),
+    tipo_parceiro VARCHAR2(40)
 );
