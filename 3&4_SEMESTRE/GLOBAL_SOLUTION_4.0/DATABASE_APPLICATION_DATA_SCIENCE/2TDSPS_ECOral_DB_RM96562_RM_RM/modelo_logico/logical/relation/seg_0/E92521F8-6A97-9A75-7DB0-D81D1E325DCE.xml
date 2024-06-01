@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Pertencev2" directorySegmentName="seg_0" id="E92521F8-6A97-9A75-7DB0-D81D1E325DCE">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 15:32:12 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<sourcePk>A8C4D809-C122-B3BD-EA71-ED5C0838851A</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>CDE699DB-0CA4-C085-5218-ABE03842F532</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>60AD51B2-D507-8C5F-D3D4-A55D60AD2311</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

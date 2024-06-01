@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9CB1FD6E-6E16-8AD1-2C46-8D13A35E57B2" name="local_Equipamento">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>232987FB-12F2-E9F9-62B2-D2D68E2983BB</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_local" id="6E949D03-5D24-F68C-FAD2-9E7BA5D174D3">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>E8B834D0-7855-A2D7-1F92-E823724FE006</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_local" id="357728D6-3845-C956-E322-349E02E9961F">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>36476022-0926-79E5-E579-432AE9AC813E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="latitude_local" id="514F69CD-698D-900F-3FEF-1FF13DDD0166">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>81859FE5-EE89-CE11-4309-528604C402AA</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="longitude_local" id="FB70840C-1557-3A7B-6654-1565D5ED5909">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>7B90B247-A838-8766-9161-4511C95FF69F</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="076FC29A-87B0-719D-714D-F00AA6076809" name="local_Equipamento_PK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>2A5B340C-2CC8-2132-F66C-8756A73AB652</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6E949D03-5D24-F68C-FAD2-9E7BA5D174D3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

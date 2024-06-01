@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="486E8F77-44A7-9B2D-478D-85F7BDA75979" name="Parceiros">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>2B0D75EC-BE3A-DF41-9564-623D2C637077</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_parceiro" id="1EF707B1-BA20-47B0-A178-B164B802172E">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>9116E3FF-6680-C6B3-2918-E625C8406E13</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_parceiro" id="DFBC01B9-EB08-27EF-CC3C-E7C2B111C1BA">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>1F9575EC-48A2-02C3-8BC8-32246B8C451E</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cnpj_parceiro" id="791109A7-48F8-6FE6-D328-B15225C97078">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>47CD2551-7BC6-0B44-6A0D-7618610796DB</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="endereco_parceiro" id="DD94D5C3-B042-AE8D-AFAA-D582C52CFDC7">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>03AD3F9B-C51A-C5E1-A0BC-1CBF2F8E9DEC</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="contato_parceiro" id="BF7F80AE-F206-F7E6-607F-E7E3C4C512F1">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>BAEDE69F-D5BE-B575-691B-AF665E2AD9A7</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_parceiro" id="5FD45961-9184-2E65-38EF-8A83DD27BE84">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>E8ADE933-C15F-368B-D10D-5829C2E82A24</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="BED00852-0E83-D580-7904-BCC592E6444E" name="Parceiros_PK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>7EA345CF-3C4E-2424-36F9-304498F3B38B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1EF707B1-BA20-47B0-A178-B164B802172E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

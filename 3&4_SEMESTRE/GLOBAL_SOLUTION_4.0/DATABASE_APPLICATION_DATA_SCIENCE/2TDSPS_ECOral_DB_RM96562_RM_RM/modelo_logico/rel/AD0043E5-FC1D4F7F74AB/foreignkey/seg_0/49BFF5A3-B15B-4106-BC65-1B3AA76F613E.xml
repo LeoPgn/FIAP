@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="49BFF5A3-B15B-4106-BC65-1B3AA76F613E" containerWithKeyObject="C9C04361-68A3-8F79-36BE-34B4CB6CD248" localFKIndex="66F60866-4EEE-FC98-A924-27090A163CED" name="leitura_Equipamento_Parceiros_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>F4BE1E48-BC80-29DE-948C-76504AF61F70</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>Parceiros</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>486E8F77-44A7-9B2D-478D-85F7BDA75979</referredTableID>
+<keyObject>BED00852-0E83-D580-7904-BCC592E6444E</keyObject>
+<referredKeyID>BED00852-0E83-D580-7904-BCC592E6444E</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_parceiro</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

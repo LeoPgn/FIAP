@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="ACE9C995-6DAD-6B6F-879C-05B39057ADE6" containerWithKeyObject="BD4184BB-494E-4DF8-81C0-A0D41A7491AB" localFKIndex="F088A3BF-5FA6-9868-760E-3377CFC569B3" name="Gera_alerta_Equipamento_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 16:03:10 UTC</createdTime>
+<generatorID>E83D1AAB-BBA8-665C-AE09-5B5DD8429CDE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<referredTableLongName>alerta_Equipamento</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D47DF47F-A565-B43E-7ECF-5330FD652B7D</referredTableID>
+<keyObject>9A7E7173-A31E-F59F-6E39-3C710B0A9FD8</keyObject>
+<referredKeyID>9A7E7173-A31E-F59F-6E39-3C710B0A9FD8</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>Parceiros_id_parceiro</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

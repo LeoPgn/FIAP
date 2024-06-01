@@ -15,7 +15,7 @@ CREATE TABLE EQUIPAMENTO(
     tipo_equipamento VARCHAR2 (40),
     dt_instalacao DATE NOT NULL,
     status_equipamento VARCHAR2(10),
-    proprietario REFERENCES PARCEIROS(nome_parceiro),
+    proprietario_parceiro REFERENCES PARCEIROS(id_parceiro),
     local_equipamento REFERENCES LOCAL_EQUIPAMENT0(id_local)
 );
 
@@ -68,8 +68,8 @@ CREATE TABLE ALERTA_EQUIPAMENTO(
 CREATE TABLE PARCEIROS(
     id_parceiro NUMBER(10) PRIMARY KEY,
     nome_parceiro VARCHAR2(100),
-    cnpj_parceiro VARCHAR2(100),
+    cnpj_parceiro VARCHAR2(14),
     endereco_parceiro VARCHAR2(100),
-    contato_parceiro VARCHAR2(11),
+    contato_parceiro VARCHAR2(20),
     tipo_parceiro VARCHAR2(40)
 );

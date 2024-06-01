@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="CDE699DB-0CA4-C085-5218-ABE03842F532" name="Relatorio">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="60AD51B2-D507-8C5F-D3D4-A55D60AD2311" name="manutencao_Equipamento">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:14:05 UTC</createdTime>
+<createdTime>2024-06-01 14:12:53 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_relatorio" id="50386ED3-DAC9-5136-9AFD-2A844AA4D9DB">
+<Attribute name="id_manutencao" id="6C6F34DE-42E5-DA3E-15EA-50F382161504">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:14:17 UTC</createdTime>
+<createdTime>2024-06-01 14:13:15 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -28,22 +28,9 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="descr_relatorio" id="13A4B2F9-643E-B046-7CAA-7D3222629838">
+<Attribute name="dt_manutencao" id="F4D57777-9F91-4337-FA02-FC41D3FDF8C3">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:14:46 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>500</dataTypeSize>
-<ownDataTypeParameters>500,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="dt_relatorio" id="A230EEB3-283D-36E1-0539-CB422CBF20B6">
-<createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:15:24 UTC</createdTime>
+<createdTime>2024-06-01 14:13:29 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -53,38 +40,65 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="imagem_relatorio" id="E4F7408F-4B68-BAD0-E569-FC6B0E5F83EE">
+<Attribute name="tipo_manutencao" id="182B1898-8466-EAD3-DD77-F1E72B7F1582">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:15:43 UTC</createdTime>
+<createdTime>2024-06-01 14:13:41 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT029</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_usuario" id="8DAE9AAC-CE42-3ACA-2681-D5B10EC9C457">
+<Attribute name="responsavel_manutencao" id="78071068-EB88-A93F-D193-965CDCA1E9C7">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:17:58 UTC</createdTime>
-<generatorID>A5E0D873-5835-32B1-51BE-D772455B4A66</generatorID>
+<createdTime>2024-06-01 15:30:26 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
-<referedAttribute>39642709-E674-F0DC-601B-C5D0E3E058FC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_relatorio" id="87918F42-0112-6014-3DF0-8FA158532EDC">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 15:32:12 UTC</createdTime>
+<generatorID>E92521F8-6A97-9A75-7DB0-D81D1E325DCE</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>50386ED3-DAC9-5136-9AFD-2A844AA4D9DB</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_equipamento" id="7BEA4FE5-E794-6447-9752-A6A1CEDBE9BC">
+<Attribute name="id_parceiro" id="78F20D0C-2CEB-1CD3-70FE-0E823ADA8029">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 13:55:44 UTC</createdTime>
-<generatorID>657C6469-88AF-AC6A-3B45-DECADD02D36D</generatorID>
+<createdTime>2024-06-01 15:33:48 UTC</createdTime>
+<generatorID>9D2297B2-5582-7264-4FBA-94DBF0636A8B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>9116E3FF-6680-C6B3-2918-E625C8406E13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_equipamento" id="D7C65AD3-7169-23D0-6978-379D75C261C8">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 15:34:37 UTC</createdTime>
+<generatorID>A68D6B20-49DC-49AA-17B2-E2460D95BF19</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -96,10 +110,10 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_parceiro" id="EA70AA0F-111F-4937-1C84-6C617B9E2245">
+<Attribute name="id_parceiro1" id="EDCB9F8D-8CFE-130C-7CD7-2F3B30976E31">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:37:47 UTC</createdTime>
-<generatorID>657C6469-88AF-AC6A-3B45-DECADD02D36D</generatorID>
+<createdTime>2024-06-01 15:34:37 UTC</createdTime>
+<generatorID>A68D6B20-49DC-49AA-17B2-E2460D95BF19</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -113,17 +127,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="A8C4D809-C122-B3BD-EA71-ED5C0838851A" name="Relatorio PK">
+<identifier id="485D2283-3A49-5A68-11D6-036DD97D2D46" name="manutencao_Equipamento PK">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:14:42 UTC</createdTime>
+<createdTime>2024-06-01 14:13:27 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="false"/>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>50386ED3-DAC9-5136-9AFD-2A844AA4D9DB</attributeRef>
+<attributeRef>6C6F34DE-42E5-DA3E-15EA-50F382161504</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

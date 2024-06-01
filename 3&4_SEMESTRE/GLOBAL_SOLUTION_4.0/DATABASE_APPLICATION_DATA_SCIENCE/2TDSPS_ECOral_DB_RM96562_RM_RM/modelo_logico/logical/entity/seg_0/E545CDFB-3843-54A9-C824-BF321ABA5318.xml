@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="539C575D-8933-C61E-0178-A7CC3B0F68D0" name="Usuario">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E545CDFB-3843-54A9-C824-BF321ABA5318" name="Equipamento">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:09:18 UTC</createdTime>
+<createdTime>2024-06-01 13:51:38 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_usuario" id="39642709-E674-F0DC-601B-C5D0E3E058FC">
+<Attribute name="id_equipamento" id="B3209AF4-7164-C175-DB04-00150BF3E590">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:10:05 UTC</createdTime>
+<createdTime>2024-06-01 13:53:23 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -28,35 +28,9 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nome_usuario" id="1523330B-D8A8-C906-2A9E-E2804B64D886">
+<Attribute name="tipo_equipamento" id="07AA4164-1D93-D39C-E2D2-8110566D9E1C">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:11:30 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="email_usuario" id="4D0711CB-2C3A-D0B7-FE39-9B0F322EA140">
-<createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:12:34 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>100</dataTypeSize>
-<ownDataTypeParameters>100,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="senha_usuario" id="FB481AA2-64E8-5FF7-709F-A6BBD9B720F5">
-<createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:13:12 UTC</createdTime>
+<createdTime>2024-06-01 13:53:52 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -67,32 +41,46 @@
 <dataTypeSize>40</dataTypeSize>
 <ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="tipo_usuario" id="3D769875-524E-4CB5-DE66-18C889906B3B">
+<Attribute name="dt_instalacao" id="BB4D609C-9E62-D70D-348E-81DC90BC2AD1">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:13:29 UTC</createdTime>
+<createdTime>2024-06-01 13:54:27 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>40</dataTypeSize>
-<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_parceiro" id="625553CD-1D8B-9B41-F377-783E31F73A31">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-01 14:37:47 UTC</createdTime>
+<generatorID>C158FE8F-2D7E-1BC9-A2AE-D8BFDFD7FC97</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>9116E3FF-6680-C6B3-2918-E625C8406E13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="30CAFDF5-F69C-A276-955D-B7AE3A428CEA" name="Usuario PK">
+<identifier id="16C9684B-D4E5-EB13-1078-70A389041D11" name="Equipamento PK">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:10:56 UTC</createdTime>
+<createdTime>2024-06-01 13:53:46 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="false"/>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>39642709-E674-F0DC-601B-C5D0E3E058FC</attributeRef>
+<attributeRef>B3209AF4-7164-C175-DB04-00150BF3E590</attributeRef>
+<attributeRef>625553CD-1D8B-9B41-F377-783E31F73A31</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
