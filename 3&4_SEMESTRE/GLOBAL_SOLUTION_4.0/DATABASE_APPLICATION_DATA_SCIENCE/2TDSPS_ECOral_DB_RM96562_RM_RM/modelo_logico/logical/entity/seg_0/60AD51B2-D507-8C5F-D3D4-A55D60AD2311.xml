@@ -78,7 +78,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_parceiro" id="78F20D0C-2CEB-1CD3-70FE-0E823ADA8029">
 <createdBy>Caju</createdBy>
@@ -93,7 +93,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_equipamento" id="D7C65AD3-7169-23D0-6978-379D75C261C8">
 <createdBy>Caju</createdBy>
@@ -108,7 +108,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_parceiro1" id="EDCB9F8D-8CFE-130C-7CD7-2F3B30976E31">
 <createdBy>Caju</createdBy>
@@ -123,6 +123,21 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_funcionario" id="90A94233-3880-E31A-BB63-D129D346BBB6">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:25:25 UTC</createdTime>
+<generatorID>D630D8F1-6EEA-D13E-43EF-C264C5A5FAB7</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>39642709-E674-F0DC-601B-C5D0E3E058FC</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -131,8 +146,9 @@
 <createdBy>Caju</createdBy>
 <createdTime>2024-06-01 14:13:27 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -66,7 +66,7 @@
 <logicalDatatype>LOGDT029</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_usuario" id="8DAE9AAC-CE42-3ACA-2681-D5B10EC9C457">
+<Attribute name="id_funcionario" id="8DAE9AAC-CE42-3ACA-2681-D5B10EC9C457">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:17:58 UTC</createdTime>
 <generatorID>A5E0D873-5835-32B1-51BE-D772455B4A66</generatorID>
@@ -79,7 +79,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_equipamento" id="7BEA4FE5-E794-6447-9752-A6A1CEDBE9BC">
 <createdBy>Caju</createdBy>
@@ -94,7 +94,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="id_parceiro" id="EA70AA0F-111F-4937-1C84-6C617B9E2245">
 <createdBy>Caju</createdBy>
@@ -109,7 +109,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

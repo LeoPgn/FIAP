@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09DACC35-89E2-FDCB-4CDC-DF4A3F1CF1F4" name="Usuario">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09DACC35-89E2-FDCB-4CDC-DF4A3F1CF1F4" name="Funcionario">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>539C575D-8933-C61E-0178-A7CC3B0F68D0</generatorID>
@@ -8,7 +8,7 @@
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="id_usuario" id="672D6BAB-49B5-20D8-3082-DA7D8CFA2209">
+<Column name="id_funcionario" id="672D6BAB-49B5-20D8-3082-DA7D8CFA2209">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>39642709-E674-F0DC-601B-C5D0E3E058FC</generatorID>
@@ -20,7 +20,7 @@
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nome_usuario" id="91CC9CC3-A07C-52BB-6D66-9D4D257710F1">
+<Column name="nome_funcionario" id="91CC9CC3-A07C-52BB-6D66-9D4D257710F1">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>1523330B-D8A8-C906-2A9E-E2804B64D886</generatorID>
@@ -32,7 +32,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="email_usuario" id="C1C30AE2-6BCA-BEE6-31BD-B70862883B0D">
+<Column name="email_funcionario" id="C1C30AE2-6BCA-BEE6-31BD-B70862883B0D">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>4D0711CB-2C3A-D0B7-FE39-9B0F322EA140</generatorID>
@@ -44,7 +44,7 @@
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="senha_usuario" id="A4BEDF24-76BE-64F1-D569-1D6A6FE4FB75">
+<Column name="senha_funcionario" id="A4BEDF24-76BE-64F1-D569-1D6A6FE4FB75">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>FB481AA2-64E8-5FF7-709F-A6BBD9B720F5</generatorID>
@@ -68,6 +68,37 @@
 <ownDataTypeParameters>40,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="Parceiros_id_parceiro" id="2A18557F-4DA1-B0AC-2D99-BE8BE1F80AA6">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>F98C74EC-B52E-7E5D-3FE5-F48AB5649B16</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="45BA5276-EFA6-F3D0-7722-9A5262AB9412" referredColumn="1EF707B1-BA20-47B0-A178-B164B802172E"/>
+</associations>
+</Column>
+<Column name="cnpj_parceiro" id="2EE4AD50-3D43-04C7-76EA-40A1AC78A73C">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>1E62C818-1839-F3E5-65C1-C8A2711424E4</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isRelationshipColumn>true</isRelationshipColumn>
+<dependOnForeignKeyID>45BA5276-EFA6-F3D0-7722-9A5262AB9412</dependOnForeignKeyID>
+<isDependOnFK_AsMandatory>true</isDependOnFK_AsMandatory>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="077D1BD5-153E-4200-CA9A-9A1A3D04A4E1" name="Usuario_PK">
@@ -80,6 +111,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="672D6BAB-49B5-20D8-3082-DA7D8CFA2209"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="15E791C5-14BF-DA2D-688A-35936E7E826A" name="Funcionario_Parceiros_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>1B647379-E2F3-17A1-5F4F-B9890AA85DCD</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A18557F-4DA1-B0AC-2D99-BE8BE1F80AA6"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

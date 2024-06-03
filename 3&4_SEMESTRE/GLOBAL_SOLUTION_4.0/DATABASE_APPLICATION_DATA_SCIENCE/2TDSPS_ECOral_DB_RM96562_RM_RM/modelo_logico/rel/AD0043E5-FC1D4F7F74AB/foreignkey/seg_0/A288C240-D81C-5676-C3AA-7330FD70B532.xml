@@ -1,8 +1,8 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="450635A6-E393-5917-5753-FDDDD964CF25" containerWithKeyObject="AFA1AE08-0893-ADA2-EA38-BB9C259831DC" localFKIndex="9C23C008-2695-C2C4-3498-5E3C2DB96F69" name="Relatorio_Funcionario_FK">
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A288C240-D81C-5676-C3AA-7330FD70B532" containerWithKeyObject="270C5161-B83D-6229-7BD3-520D3DFFB236" localFKIndex="42BF52B7-43E6-60E8-F213-3002CCAEC8A1" name="manutencao_Equipamento_Funcionario_FK">
 <createdBy>Caju</createdBy>
-<createdTime>2024-05-31 23:25:17 UTC</createdTime>
-<generatorID>A5E0D873-5835-32B1-51BE-D772455B4A66</generatorID>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>D630D8F1-6EEA-D13E-43EF-C264C5A5FAB7</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <referredTableLongName>Funcionario</referredTableLongName>
 <deleteRule>NO ACTION</deleteRule>

@@ -63,7 +63,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -79,7 +79,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -95,7 +95,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -111,11 +111,27 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="BA06A4B7-4016-1774-10A7-8A0C138E8CD9" referredColumn="8A49BC51-0166-64F0-2D91-497A299D4682"/>
+</associations>
+</Column>
+<Column name="Funcionario_id_funcionario" id="1AF2A2C5-31B0-E08E-CB8E-D2CAC641A7FF">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>90A94233-3880-E31A-BB63-D129D346BBB6</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A288C240-D81C-5676-C3AA-7330FD70B532" referredColumn="672D6BAB-49B5-20D8-3082-DA7D8CFA2209"/>
 </associations>
 </Column>
 </columns>
@@ -175,6 +191,17 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="FCA35264-020A-1E82-96DF-6FEE690213E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="42BF52B7-43E6-60E8-F213-3002CCAEC8A1" name="manutencao_Equipamento_Funcionario_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>D630D8F1-6EEA-D13E-43EF-C264C5A5FAB7</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1AF2A2C5-31B0-E08E-CB8E-D2CAC641A7FF"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Gera" directorySegmentName="seg_0" id="F843D669-3E2A-B15F-B17A-9B1B4A45D8A9">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<sourcePk>EA658271-FB28-32E9-0BDA-FD036C74A5D3</sourcePk>
+<identifying>true</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D5AC9A2F-57C7-022A-94C5-5F172EB863C6</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>C3CF9D97-617C-08BB-76AD-83CB5ED59347</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -120,6 +120,22 @@
 <colAssociation fkAssociation="9C20055A-F30F-9E8D-6159-3BA1B70B7A32" referredColumn="8A49BC51-0166-64F0-2D91-497A299D4682"/>
 </associations>
 </Column>
+<Column name="Usuario_id_usuario2" id="4210D329-F2B4-74FC-3B6A-3CF9789E2DD7">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>465B4A0A-E616-31C7-FD81-D89D1AC8CE0B</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7A362699-C8A7-ADC1-4078-F81FC556CA12" referredColumn="2B67707A-8322-578D-003B-A06365A9FF5A"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="12CD717B-7F24-3A7F-7889-83F66B0FB9AE" name="leitura_Equipamento_PK">
@@ -170,6 +186,17 @@
 <indexColumnUsage>
 <colUsage columnID="E2EC2475-E2CE-6F42-65AB-9E6D3BAF7A52"/>
 <colUsage columnID="AE6B56B1-D806-FD88-D06A-F8D874C03AD8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1166AB9E-36A7-53A1-2180-39DAF995A9B0" name="leitura_Equipamento_Usuario_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>C1C379A6-77D5-AEBB-4CD1-B2A9E0838145</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4210D329-F2B4-74FC-3B6A-3CF9789E2DD7"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

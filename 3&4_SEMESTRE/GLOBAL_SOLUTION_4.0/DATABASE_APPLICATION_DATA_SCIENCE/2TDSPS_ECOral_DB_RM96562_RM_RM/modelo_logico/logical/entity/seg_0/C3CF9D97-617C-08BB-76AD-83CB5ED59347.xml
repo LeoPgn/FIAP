@@ -22,7 +22,6 @@
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -79,21 +78,6 @@
 <dataTypeSize>40</dataTypeSize>
 <ownDataTypeParameters>40,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="id_usuario" id="DF431C10-A5D2-6EF7-78EE-1EE8219538AB">
-<createdBy>Caju</createdBy>
-<createdTime>2024-06-01 15:52:09 UTC</createdTime>
-<generatorID>1472FC97-4DFC-F753-7E89-824F020F72CC</generatorID>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<referedAttribute>39642709-E674-F0DC-601B-C5D0E3E058FC</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="id_parceiro" id="66896764-5C0A-5A4E-1BBB-AA8BBE4691B7">
 <createdBy>Caju</createdBy>
 <createdTime>2024-06-01 15:52:30 UTC</createdTime>
@@ -109,18 +93,115 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="id_usuario" id="1C9A71C1-F94D-EED0-919F-3B46882E41A5">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:08:12 UTC</createdTime>
+<generatorID>74019D51-B7AA-76AC-A1EB-5D13E727CDC9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>95F1E999-DAB6-7DA9-5B7C-E64F4F4F888C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_leitura" id="F30C0E10-645F-5BAB-0D0A-4553F1066249">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>DD480AA8-D6A0-558C-A25E-5D0F0C7285C6</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_local" id="4D7F18C8-20E0-A683-3A35-4C9FC482F0A0">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>5E725BB9-A9A3-9CD0-0051-5324B3A1086B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_equipamento" id="488AA922-832E-71E8-4341-C892EF052E70">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>C90B99F1-1EC6-957F-4290-874154D01B1B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_parceiro1" id="3D8084BD-0959-132F-738F-A18A07A72769">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>97183465-D74A-3692-B726-E1DEA4FE76CB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_parceiro2" id="876E25E1-CD3C-0189-3A2A-26A0802E121A">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:49:24 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<engineerTo>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+</engineerTo>
+<referedAttribute>A8109494-5F27-96A8-39BB-191000E4767E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="A9BD4483-1FD7-6A15-6234-F71183C49D3E" name="alerta_Equipamento PK">
 <createdBy>Caju</createdBy>
 <createdTime>2024-06-01 15:52:30 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
+<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>66896764-5C0A-5A4E-1BBB-AA8BBE4691B7</attributeRef>
+<attributeRef>6BDB9CBD-A859-C252-EE3B-CDA26BE577B1</attributeRef>
+<attributeRef>F30C0E10-645F-5BAB-0D0A-4553F1066249</attributeRef>
+<attributeRef>4D7F18C8-20E0-A683-3A35-4C9FC482F0A0</attributeRef>
+<attributeRef>488AA922-832E-71E8-4341-C892EF052E70</attributeRef>
+<attributeRef>3D8084BD-0959-132F-738F-A18A07A72769</attributeRef>
+<attributeRef>876E25E1-CD3C-0189-3A2A-26A0802E121A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

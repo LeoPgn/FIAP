@@ -13,7 +13,6 @@
 <createdTime>2024-06-01 16:03:10 UTC</createdTime>
 <generatorID>6BDB9CBD-A859-C252-EE3B-CDA26BE577B1</generatorID>
 <ownerDesignName>modelo_logico</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
@@ -99,6 +98,102 @@
 <colAssociation fkAssociation="F986C27B-6985-1DE9-7DCF-8093E3543F64" referredColumn="1EF707B1-BA20-47B0-A178-B164B802172E"/>
 </associations>
 </Column>
+<Column name="Usuario_id_usuario2" id="D19133BB-0342-EF6B-DD55-92097418130B">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>1C9A71C1-F94D-EED0-919F-3B46882E41A5</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E07CE130-27B4-9286-E4F6-93F3C58B13EC" referredColumn="2B67707A-8322-578D-003B-A06365A9FF5A"/>
+</associations>
+</Column>
+<Column name="leitura_Equipamento_id_leitura" id="697A1A89-FD3A-80F4-EE37-7438C8BC9D61">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>F30C0E10-645F-5BAB-0D0A-4553F1066249</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB2719FC-DF04-1709-EA01-03B3408022EC" referredColumn="790242D3-35A0-1357-3CF9-FDAE16CAD5BB"/>
+</associations>
+</Column>
+<Column name="leitura_Equipamento_local_Equipamento_id_local" id="740600B4-E704-73E6-2A86-CDCF5A3DA0AF">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>4D7F18C8-20E0-A683-3A35-4C9FC482F0A0</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB2719FC-DF04-1709-EA01-03B3408022EC" referredColumn="10772F9B-531C-133E-38AC-E1B034211836"/>
+</associations>
+</Column>
+<Column name="leitura_Equipamento_Equipamento_id_equipamento" id="CED00319-0576-ADCA-8D0E-CCA66ED0FD25">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>488AA922-832E-71E8-4341-C892EF052E70</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB2719FC-DF04-1709-EA01-03B3408022EC" referredColumn="E2EC2475-E2CE-6F42-65AB-9E6D3BAF7A52"/>
+</associations>
+</Column>
+<Column name="leitura_Equipamento_Equipamento_Parceiros_id_parceiro" id="B4F1CA4E-7042-D1DC-919F-D1ED18A64F35">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>3D8084BD-0959-132F-738F-A18A07A72769</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB2719FC-DF04-1709-EA01-03B3408022EC" referredColumn="AE6B56B1-D806-FD88-D06A-F8D874C03AD8"/>
+</associations>
+</Column>
+<Column name="leitura_Equipamento_Parceiros_id_parceiro" id="BA438D41-4427-026F-0C40-AB0388F84E02">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>876E25E1-CD3C-0189-3A2A-26A0802E121A</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DB2719FC-DF04-1709-EA01-03B3408022EC" referredColumn="372DC68A-B3BE-E813-ABBE-8B7E7CB4B7CC"/>
+</associations>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="9A7E7173-A31E-F59F-6E39-3C710B0A9FD8" name="alerta_Equipamento_PK">
@@ -133,6 +228,32 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="24DD5F76-AA30-ECD9-7BE3-3747DF055D23"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3B6CEF73-D640-3399-146B-38C79A3E3574" name="alerta_Equipamento_Usuario_FKv2">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-02 22:16:24 UTC</createdTime>
+<generatorID>74019D51-B7AA-76AC-A1EB-5D13E727CDC9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D19133BB-0342-EF6B-DD55-92097418130B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="28D77379-077E-565C-5D1B-7676BD3BEEC1" name="alerta_Equipamento_leitura_Equipamento_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-03 00:50:50 UTC</createdTime>
+<generatorID>F843D669-3E2A-B15F-B17A-9B1B4A45D8A9</generatorID>
+<ownerDesignName>modelo_logico</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="697A1A89-FD3A-80F4-EE37-7438C8BC9D61"/>
+<colUsage columnID="740600B4-E704-73E6-2A86-CDCF5A3DA0AF"/>
+<colUsage columnID="CED00319-0576-ADCA-8D0E-CCA66ED0FD25"/>
+<colUsage columnID="B4F1CA4E-7042-D1DC-919F-D1ED18A64F35"/>
+<colUsage columnID="BA438D41-4427-026F-0C40-AB0388F84E02"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

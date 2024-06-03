@@ -33,7 +33,7 @@ CREATE TABLE RELATORIO(
     imagem_relatorio BLOB,
     responsavel_relatorio REFERENCES USUARIO (id_usuario),
     id_equipamento REFERENCES EQUIPAMENTO (id_equipamento),
-    responsavel_manutencao REFERENCES MANUTENCAO_EQUIPAMENTO(responsavel_manutencao)--ALTERAR DE ACORDO COM A TABELA INFORMADA NO WHATSAPP
+    responsavel_manutencao --ALTERAR DE ACORDO COM A TABELA INFORMADA NO WHATSAPP
 );
 
 CREATE TABLE LEITURA_EQUIPAMENTO(

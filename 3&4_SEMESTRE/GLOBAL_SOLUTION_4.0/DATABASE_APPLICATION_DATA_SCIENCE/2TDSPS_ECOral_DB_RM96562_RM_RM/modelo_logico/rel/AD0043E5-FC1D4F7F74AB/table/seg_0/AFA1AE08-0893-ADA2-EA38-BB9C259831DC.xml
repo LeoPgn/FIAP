@@ -55,7 +55,7 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Usuario_id_usuario" id="E23CCF96-E98A-FEA8-3650-3F3CD5AA63FB">
+<Column name="Funcionario_id_funcionario" id="E23CCF96-E98A-FEA8-3650-3F3CD5AA63FB">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>8DAE9AAC-CE42-3ACA-2681-D5B10EC9C457</generatorID>
@@ -80,14 +80,14 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
 <colAssociation fkAssociation="B5DF1357-A714-01CA-4C26-927B9E7A33F1" referredColumn="BF93B1AB-373D-ABF3-46D1-D62607034940"/>
 </associations>
 </Column>
-<Column name="Equipamento_id_parceiro" id="5FB1D080-AD84-0D2E-3546-DF9214D45840">
+<Column name="Equipamento_Parceiros_id_parceiro" id="5FB1D080-AD84-0D2E-3546-DF9214D45840">
 <createdBy>Caju</createdBy>
 <createdTime>2024-06-01 16:03:10 UTC</createdTime>
 <generatorID>EA70AA0F-111F-4937-1C84-6C617B9E2245</generatorID>
@@ -96,7 +96,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>10</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
 <previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
 <associations>
@@ -117,7 +117,7 @@
 <colUsage columnID="84210AEE-6D5D-1EEF-5777-D33AF621C627"/>
 </indexColumnUsage>
 </ind_PK_UK>
-<ind_PK_UK id="9C23C008-2695-C2C4-3498-5E3C2DB96F69" name="Relatorio_Usuario_FK">
+<ind_PK_UK id="9C23C008-2695-C2C4-3498-5E3C2DB96F69" name="Relatorio_Funcionario_FK">
 <createdBy>Caju</createdBy>
 <createdTime>2024-05-31 23:25:17 UTC</createdTime>
 <generatorID>A5E0D873-5835-32B1-51BE-D772455B4A66</generatorID>

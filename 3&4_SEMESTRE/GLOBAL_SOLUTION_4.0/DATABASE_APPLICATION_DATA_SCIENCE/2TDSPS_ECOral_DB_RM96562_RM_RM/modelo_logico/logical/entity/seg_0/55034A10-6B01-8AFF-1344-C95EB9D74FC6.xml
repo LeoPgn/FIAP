@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2B0D75EC-BE3A-DF41-9564-623D2C637077" name="Parceiros">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="55034A10-6B01-8AFF-1344-C95EB9D74FC6" name="Usuario">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:25:55 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="id_parceiro" id="9116E3FF-6680-C6B3-2918-E625C8406E13">
+<Attribute name="id_usuario" id="95F1E999-DAB6-7DA9-5B7C-E64F4F4F888C">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:26:01 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -28,9 +28,9 @@
 <dataTypePrecision>10</dataTypePrecision>
 <ownDataTypeParameters>,10,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nome_parceiro" id="1F9575EC-48A2-02C3-8BC8-32246B8C451E">
+<Attribute name="nome_usuario" id="D4EA362E-30A6-8478-9AD2-0D8A7027450B">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:26:17 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -41,22 +41,9 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cnpj_parceiro" id="47CD2551-7BC6-0B44-6A0D-7618610796DB">
+<Attribute name="email_usuario" id="F01A5A05-2938-FFCF-5143-8830E3839285">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:26:38 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>14</dataTypeSize>
-<ownDataTypeParameters>14,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="endereco_parceiro" id="03AD3F9B-C51A-C5E1-A0BC-1CBF2F8E9DEC">
-<createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:28:37 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -67,22 +54,9 @@
 <dataTypeSize>100</dataTypeSize>
 <ownDataTypeParameters>100,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="contato_parceiro" id="BAEDE69F-D5BE-B575-691B-AF665E2AD9A7">
+<Attribute name="senha_usuario" id="B1DCEFE5-FC78-C9E4-8964-ADF42487A142">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:29:00 UTC</createdTime>
-<ownerDesignName>modelo_logico</ownerDesignName>
-<engineerTo>
-<item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>20</dataTypeSize>
-<ownDataTypeParameters>20,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="tipo_parceiro" id="E8ADE933-C15F-368B-D10D-5829C2E82A24">
-<createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:31:05 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <engineerTo>
 <item key="AD0043E5-C11A-B87A-D538-FC1D4F7F74AB" value="true"/>
@@ -95,9 +69,9 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="7EA345CF-3C4E-2424-36F9-304498F3B38B" name="Parceiros PK">
+<identifier id="7D132F1F-4E9E-292A-1CF7-64012B3B6D83" name="Usuario PK">
 <createdBy>Caju</createdBy>
-<createdTime>2024-06-01 14:26:14 UTC</createdTime>
+<createdTime>2024-06-02 21:58:35 UTC</createdTime>
 <ownerDesignName>modelo_logico</ownerDesignName>
 <shouldEngineer>false</shouldEngineer>
 <engineerTo>
@@ -105,7 +79,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>9116E3FF-6680-C6B3-2918-E625C8406E13</attributeRef>
+<attributeRef>95F1E999-DAB6-7DA9-5B7C-E64F4F4F888C</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
