@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Recebe" directorySegmentName="seg_0" id="D2877D39-B96C-E7C4-E8D0-099A8F483F46">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:01:23 UTC</createdTime>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<engineerTo>
+<item key="B897808F-DF86-492C-FFCD-E16732715554" value="true"/>
+</engineerTo>
+<sourcePk>F4EB6C4F-5A8D-DB51-84B4-6FB48BBF63E0</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>7BC49894-C129-C3F9-4D78-AF1432303D0C</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>2F98B126-ED9C-146B-06A2-6AB4651E1B40</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

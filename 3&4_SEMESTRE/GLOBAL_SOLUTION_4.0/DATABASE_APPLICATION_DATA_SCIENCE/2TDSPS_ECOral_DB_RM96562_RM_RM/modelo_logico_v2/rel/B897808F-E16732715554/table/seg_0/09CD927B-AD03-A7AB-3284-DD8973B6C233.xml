@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="09CD927B-AD03-A7AB-3284-DD8973B6C233" name="Funcionario">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>5495BD0E-E8BF-1F2F-A3CB-87A7A824C2B4</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_func" id="2A2BFF0F-4D4C-1BE3-26BF-8776D671FC43">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>61F226D1-89B8-D870-ADD5-E22E8DE87F76</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome_func" id="926CFBAB-3CAC-2267-4164-5ADA93CE2EBD">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>60553C35-BAD9-BDD8-8AB2-A5A63C47D969</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email_func" id="19FFCF9D-CB75-61C7-AA7E-C25E4104CE62">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>270FA767-B9A4-7D11-20AE-9CBE8B124403</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="senha_func" id="DEF504B5-DA68-BF8C-70DE-C9C45810E4D7">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>240DA7CB-427F-FA91-40B9-C7FA9521CC5B</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>40</dataTypePrecision>
+<ownDataTypeParameters>,40,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Parceiros_id_parceiro" id="37E4D10E-1EED-7F6F-446E-8E14B0F281DF">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>CC29F371-8716-CCB5-AEE4-EE7BE156F3DC</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="47B8CB39-5294-0238-2E9B-D1CE045F373F" referredColumn="6CC25A68-C05F-308B-515D-B17094E838AF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="178D3500-235B-8645-BAE3-1245A8313FAE" name="Funcionario_PK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>1059396C-8F35-4982-B2C6-9101FB73D393</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A2BFF0F-4D4C-1BE3-26BF-8776D671FC43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="69CD2608-660D-227E-9E37-8178ED07A2E0" name="Funcionario_Parceiros_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>241DD05D-9BAE-C0BC-9200-B47CA96D5C0D</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="37E4D10E-1EED-7F6F-446E-8E14B0F281DF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Faz" directorySegmentName="seg_0" id="CD2504AC-16E4-B450-53F5-920D49F2D2D4">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 01:58:48 UTC</createdTime>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<engineerTo>
+<item key="B897808F-DF86-492C-FFCD-E16732715554" value="true"/>
+</engineerTo>
+<sourcePk>FBBB8E52-E280-5C2D-708E-D5E0A9F48466</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>707B47E6-D9E1-5070-2031-8B8887630B38</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9A76F869-7670-F678-B435-3A6D820454BB</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

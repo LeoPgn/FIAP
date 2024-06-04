@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68B100F8-62B0-A773-49D8-922A47AED723" name="Relatorio">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>3FF80F65-C767-ACD7-FE88-308F1225832D</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_relatorio" id="C78012AE-A705-3EF6-F5FE-A48EE6DAAD85">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>EFADE363-0488-DA81-D444-91C8F08B9199</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="descr_relatorio" id="9733F506-0091-97C7-F13E-9C4D886CC26A">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>1F85632B-B790-AF75-93C2-628293BEF757</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_relatorio" id="CF885F30-EC37-1A03-0077-7A4B596A70F2">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>0DBE7721-841E-D8AD-57AC-F563A9154996</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="imagem_relatorio" id="CF298FEB-86DC-D579-3E87-8EF7DD0F146C">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>B66CBFFC-74BD-EDE6-2DEC-F04A0F48BC2F</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT029</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Funcionario_id_func" id="27448BC9-087E-7A68-CE23-38D5228B5468">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>77A6B40D-5AA3-376B-6A5C-827A015A6A8E</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3941B17A-C3F8-557D-E063-6F1FA1C6DFEA" referredColumn="2A2BFF0F-4D4C-1BE3-26BF-8776D671FC43"/>
+</associations>
+</Column>
+<Column name="Equipamento_id_equip" id="C992453E-D608-0060-0CB6-43A9F0EA6923">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>EFC30AD9-6AAD-47CD-765D-25FE0863B193</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="446F97F5-5F2D-76C7-DA34-6EFD96647ABF" referredColumn="3FCE00C0-F74E-6AB3-41D6-8F3F90842694"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6CB66680-9751-6EEA-2430-375F7EE033F9" name="Relatorio_PK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>00BEF73F-DF23-F64F-0B40-1DC363CABDD1</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C78012AE-A705-3EF6-F5FE-A48EE6DAAD85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="01D1999A-F153-77B2-A4A9-340872F2AFB9" name="Relatorio_Funcionario_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>31296BE0-AC42-4ADA-5DBC-578B6C0549BE</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="27448BC9-087E-7A68-CE23-38D5228B5468"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E999154C-21B2-C5B0-60D6-AC8E93192065" name="Relatorio_Equipamento_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>144D90B5-832B-6493-EBF0-F8AB9689816E</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C992453E-D608-0060-0CB6-43A9F0EA6923"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

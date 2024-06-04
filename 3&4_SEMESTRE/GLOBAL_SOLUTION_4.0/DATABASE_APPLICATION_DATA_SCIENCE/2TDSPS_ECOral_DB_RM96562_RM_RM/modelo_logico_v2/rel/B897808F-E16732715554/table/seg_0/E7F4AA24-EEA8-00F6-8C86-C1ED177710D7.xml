@@ -1,0 +1,180 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E7F4AA24-EEA8-00F6-8C86-C1ED177710D7" name="manutencao_Equipamento">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>9A76F869-7670-F678-B435-3A6D820454BB</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_manut" id="927FE438-3A8A-3A92-0B30-EB76AA3EBF9D">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>84595E6E-806F-3187-F8A5-5C5B0D9D5610</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dt_manut" id="E66109FE-1869-C98B-1674-EFF33A08995E">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>922CCF08-636F-EEEC-371A-17DC5BEA0DDC</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tipo_manut" id="FD98010B-10A0-BF1B-D2B5-3B911BBF3A52">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>B5E14488-24F0-50D2-3064-62F2179FFC09</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="responsavel_manut" id="A1716FFA-3115-B7D0-7A71-C694DC86C6DD">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>CDD3B5D4-9019-3B5E-F935-ED7D78EF0162</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Equipamento_id_equip" id="5F78EBED-9C51-9F4C-B7F5-C3D3D74F9269">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>F60CC901-911D-978B-7E42-C3A26331FD7E</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E407B79B-2F63-2213-B873-142FD724E611" referredColumn="3FCE00C0-F74E-6AB3-41D6-8F3F90842694"/>
+</associations>
+</Column>
+<Column name="Funcionario_id_func" id="3F6DBAD0-7ED9-1305-EF9D-628E0077B0BB">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>D918AF7E-B5F6-4CBB-61BB-921FA5FD141A</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23B91024-BE53-EFAD-55FE-70FF4946D61D" referredColumn="2A2BFF0F-4D4C-1BE3-26BF-8776D671FC43"/>
+</associations>
+</Column>
+<Column name="Relatorio_id_relatorio" id="AFCA4B8F-25E7-C06B-276C-C5B98200D21E">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>097F06C1-44B5-5790-1CBB-BFFAF8A9F67D</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B1B15230-B607-F493-3AC6-FE816679E941" referredColumn="C78012AE-A705-3EF6-F5FE-A48EE6DAAD85"/>
+</associations>
+</Column>
+<Column name="Parceiros_id_parceiro" id="A60FA671-E777-0772-3918-D0E162A39F72">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>EB01E94C-F545-5E51-25D3-EFAAF0795A82</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F0CBE796-C789-6189-BCF7-78CB92DD4346" referredColumn="6CC25A68-C05F-308B-515D-B17094E838AF"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1A77F238-0929-4371-C89B-9244EE66C129" name="manutencao_Equipamento__IDX">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>A4029179-FA28-BBC6-4BD2-20D7FE112F0E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="AFCA4B8F-25E7-C06B-276C-C5B98200D21E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F2090764-AE01-0F5E-82EA-0D0A9A4800A1" name="manutencao_Equipamento_Equipamento_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>CD2504AC-16E4-B450-53F5-920D49F2D2D4</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F78EBED-9C51-9F4C-B7F5-C3D3D74F9269"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="39258E48-E290-FAF8-5807-155586F8C69F" name="manutencao_Equipamento_Relatorio_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>A4029179-FA28-BBC6-4BD2-20D7FE112F0E</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AFCA4B8F-25E7-C06B-276C-C5B98200D21E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9CC3CC54-9F90-9AD2-D51C-B85D43ED2216" name="manutencao_Equipamento_Funcionario_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>221A3B9F-6F2A-F275-A1F3-1D9C777E0CD4</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F6DBAD0-7ED9-1305-EF9D-628E0077B0BB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9FF6D31E-FC6D-D6EC-E045-E8519D384706" name="manutencao_Equipamento_Parceiros_FK">
+<createdBy>Caju</createdBy>
+<createdTime>2024-06-04 02:09:38 UTC</createdTime>
+<generatorID>AD061307-5C4D-5ABE-7675-EE7FB400BB10</generatorID>
+<ownerDesignName>modelo_logico_v2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A60FA671-E777-0772-3918-D0E162A39F72"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
