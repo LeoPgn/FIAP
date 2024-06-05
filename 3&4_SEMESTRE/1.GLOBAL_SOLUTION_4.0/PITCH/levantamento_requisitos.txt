@@ -1,0 +1,39 @@
+Levantamento de requisitos: Pitch
+
+- O que gostariamos de apresentar no pitch (app)? 
+	- Apresentação de funcionalidades do usuário(login, acessar dados fornecidos do mar, tela turismo, tela ecossistema, recebe alerta);
+	- Apresentar funcionalidades do representante da empresa de turismo (Login, Tela de gerar relatorio (preenche e envia dados), recebe alerta);
+
+
+
+Celular: Pixel 3A
+
+- Home (usuario e funcionario) 
+	- Imagem_Background(imputada)
+	- Sobre nós
+		   - Proposta (descr)
+	- Gerar relatorio (botão)
+		   - Abre uma view, que contem formulario de preenchimento
+		   - Descr. relatorio
+		   - data
+	           - Imagem (abrir camera e tirar foto ou inserir imagem)
+		   - botao enviar relatorio 
+			- recebe notificacao "Relatorio enviado com sucesso"
+	- Nossos Parceiros
+		   - ONG's (c/ fotos embutidas)
+		   - Empresas de Turismo (c/fotos embutidas)
+		
+
+- Graficos (só apresentar os dados)
+	- Grafico com dados de temperatura, salinidade, acidez...
+
+- Explore (encontrar pontos de mergulho)
+	- Locais (dados mocados)
+		- Ao clicar, fornece dados (mocados) do local (telefone, endereco, nome do parceiro, descr) para agendar expedição de mergulho com empresa de turismo.
+
+- Config Usuário (previamente pronta)
+	- IDEIAS: 
+		- Sobre o aplicativo: view com imagem e descr. proposta do app;
+		- Termos e condições: view com textos de condições dos dados do app que serão fornecidos pras ONG's
+		- Politica e privacidade: View com textos de informativos sobre o compartilhamento de dados de quantidade de usuarios para as ONG's realizar pesquisas
+		- Linguagem: Listas de idiomas que ao clicar em um, gera alerta de idioma atualizado!
