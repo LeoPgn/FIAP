@@ -535,9 +535,9 @@ END pkg_alerta_equipamento;
 BEGIN
     pkg_usuario.inserir_usuario(
         p_id_user    => SEQ_ID_USER.nextval,
-        p_nome_user  => 'Gabriel', --INSIRA O NOME QUE DESEJA
-        p_email_user => 'gabriel@examplo.com', -- INSIRA O EMAIL QUE DESEJA
-        p_senha_user => 'gaba' -- INSIRA A SENHA DESEJADA
+        p_nome_user  => 'João Silva', --INSIRA O NOME QUE DESEJA
+        p_email_user => 'joao.silva@example.com', -- INSIRA O EMAIL QUE DESEJA
+        p_senha_user => 'senha123' -- INSIRA A SENHA DESEJADA
     );
 END;
 /
@@ -548,10 +548,10 @@ SELECT * FROM usuario;
 BEGIN
     pkg_parceiros.inserir_parceiros(
         p_id_parceiro   => SEQ_ID_PARC.nextval,
-        p_nome_parc     => 'ONG PINGUIM', -- INSIRA O NOME DO PARCEIRO
-        p_cnpj_parc     => '10230012000110', -- INSIRA O CNPJ DE 14 DIGITOS DO PARCEIRO
-        p_endereco_parc => 'Rua TESTADO, 203', -- INSIRA O ENDERECO DO PARCEIRO
-        p_contato_parc  => '11558322169', -- INSIRA O CONTATO DO PARCEIRO
+        p_nome_parc     => 'ONG PINGUINS SC', -- INSIRA O NOME DO PARCEIRO
+        p_cnpj_parc     => '12345678901234', -- INSIRA O CNPJ DE 14 DIGITOS DO PARCEIRO
+        p_endereco_parc => 'Rua Teste, 123', -- INSIRA O ENDERECO DO PARCEIRO
+        p_contato_parc  => '11953589300', -- INSIRA O CONTATO DO PARCEIRO
         p_tipo_parc     => 'ONG' -- INSIRA O TIPO DE PARCEIRO
     );
 END;
@@ -563,9 +563,9 @@ SELECT * FROM parceiros;
 BEGIN
     pkg_local_equipamento.inserir_local_equipamento(
         p_id_local => SEQ_ID_LOCAL_EQUIP.nextval,
-        p_nome_local => 'Local B', -- INSIRA O LOCAL DESEJADO DA INSTALACAO DO EQUIP
-        p_latitude_local => '12.2345', -- INSIRA A LATITUDE DO EQUIP
-        p_longitude_local => '65.0928' -- INSIRA A LONGITUDE DO EQUIP
+        p_nome_local => 'Local A', -- INSIRA O LOCAL DESEJADO DA INSTALACAO DO EQUIP
+        p_latitude_local => '12.3456', -- INSIRA A LATITUDE DO EQUIP
+        p_longitude_local => '65.4321' -- INSIRA A LONGITUDE DO EQUIP
     );
 END;
 /
@@ -576,9 +576,9 @@ SELECT * FROM local_equipamento;
 BEGIN
     pkg_equipamento.inserir_equipamento(
         p_id_equip => SEQ_ID_EQUIP.nextval,
-        p_tipo_equip => 'Camera', -- DESCREVA O EQUIPAMENTO DE MONITORAMENTO
+        p_tipo_equip => 'Tipo1', -- DESCREVA O EQUIPAMENTO DE MONITORAMENTO
         p_dt_equip => SYSDATE,
-        p_parceiros_id_parceiro => SEQ_ID_PARC.nextval
+        p_parceiros_id_parceiro => SEQ_ID_PARC.currval
     );
 END;
 /
@@ -590,8 +590,8 @@ BEGIN
     pkg_leitura_equipamento.inserir_leitura_equipamento(
         p_id_leitura                 => SEQ_ID_LEITURA_EQUIP.nextval,
         p_dt_leitura                 => SYSDATE,
-        p_tipo_leitura               => 'PH',
-        p_valor_leitura              => 1.99,
+        p_tipo_leitura               => 'Salinidade',
+        p_valor_leitura              => 30,
         p_local_equipamento_id_local => SEQ_ID_LOCAL_EQUIP.currval,
         p_parceiros_id_parceiro      => SEQ_ID_PARC.currval,
         p_usuario_id_user            => SEQ_ID_USER.currval,
