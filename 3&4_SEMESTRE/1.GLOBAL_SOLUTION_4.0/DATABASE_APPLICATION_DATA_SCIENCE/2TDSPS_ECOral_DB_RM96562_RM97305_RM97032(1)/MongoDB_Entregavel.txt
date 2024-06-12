@@ -1,0 +1,227 @@
+Entrega de Banco de Dados - MongoDB
+
+
+use('Ecoral')
+db.createCollection("Equipamentos")
+db.createCollection("LeiturasDados")
+// Inserindo 5 documentos na coleção Equipamentos
+db.Equipamentos.insertMany([
+{
+"id": 1,
+"tipo": "Temperatura",
+"modelo": "SensorT1000",
+"localizacao": {
+"nome": "Recife de Abrolhos",
+"latitude": -17.73,
+"longitude": -39.04
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-20T10:00:00.000Z"
+},
+{
+"id": 2,
+"tipo": "PH",
+"modelo": "SensorPH2000",
+"localizacao": {
+"nome": "Recife de Tamandaré",
+"latitude": -8.23,
+"longitude": -35.04
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-15T14:30:00.000Z"
+},
+{
+"id": 3,
+"tipo": "Turbidez",
+"modelo": "SensorTurb3000",
+"localizacao": {
+"nome": "Recife da Galheta",
+"latitude": -26.47,
+"longitude": -48.49
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-25T16:15:00.000Z"
+},
+{
+"id": 4,
+"tipo": "Salinidade",
+"modelo": "SensorSal4000",
+"localizacao": {
+"nome": "Recife de Fernando de Noronha",
+"latitude": -3.86,
+"longitude": -32.43
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-10T09:45:00.000Z"
+},
+{
+"id": 5,
+"tipo": "Oxigênio Dissolvido",
+"modelo": "SensorOx5000",
+"localizacao": {
+"nome": "Recife de Arraial do Cabo",
+"latitude": -22.97,
+"longitude": -42.02
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-05T12:30:00.000Z"
+}
+]);
+// Inserindo 5 documentos na coleção LeiturasDados
+db.LeiturasDados.insertMany([
+{
+"idEquipamento": 1,
+"timestamp": "2024-08-27T10:30:00.000Z",
+"valor": 28.5,
+"unidade": "Celsius"
+},
+{
+"idEquipamento": 2,
+"timestamp": "2024-08-27T11:15:00.000Z",
+"valor": 8.2,
+"unidade": "pH"
+},
+{
+"idEquipamento": 3,
+"timestamp": "2024-08-27T12:00:00.000Z",
+"valor": 10.5,
+"unidade": "NTU"
+},
+{
+"idEquipamento": 4,
+"timestamp": "2024-08-27T13:45:00.000Z",
+"valor": 35.2,
+"unidade": "PSU"
+},
+{
+"idEquipamento": 5,
+"timestamp": "2024-08-27T14:30:00.000Z",
+"valor": 7.8,
+"unidade": "mg/L"
+}
+]);
+db.Equipamentos.find()
+db.LeiturasDados.find()
+Dados inseridos no Equipamentos e LeiturasDados:
+Equipamentos:
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b86f"
+},
+"id": 1,
+"tipo": "Temperatura",
+"modelo": "SensorT1000",
+"localizacao": {
+"nome": "Recife de Abrolhos",
+"latitude": -17.73,
+"longitude": -39.04
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-20T10:00:00.000Z"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b870"
+},
+"id": 2,
+"tipo": "PH",
+"modelo": "SensorPH2000",
+"localizacao": {
+"nome": "Recife de Tamandaré",
+"latitude": -8.23,
+"longitude": -35.04
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-15T14:30:00.000Z"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b871"
+},
+"id": 3,
+"tipo": "Turbidez",
+"modelo": "SensorTurb3000",
+"localizacao": {
+"nome": "Recife da Galheta",
+"latitude": -26.47,
+"longitude": -48.49
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-25T16:15:00.000Z"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b872"
+},
+"id": 4,
+"tipo": "Salinidade",
+"modelo": "SensorSal4000",
+"localizacao": {
+"nome": "Recife de Fernando de Noronha",
+"latitude": -3.86,
+"longitude": -32.43
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-10T09:45:00.000Z"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b873"
+},
+"id": 5,
+"tipo": "Oxigênio Dissolvido",
+"modelo": "SensorOx5000",
+"localizacao": {
+"nome": "Recife de Arraial do Cabo",
+"latitude": -22.97,
+"longitude": -42.02
+},
+"status": "Ativo",
+"ultimaCalibracao": "2024-08-05T12:30:00.000Z"
+}
+LeiturasDados:
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b874"
+},
+"idEquipamento": 1,
+"timestamp": "2024-08-27T10:30:00.000Z",
+"valor": 28.5,
+"unidade": "Celsius"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b875"
+},
+"idEquipamento": 2,
+"timestamp": "2024-08-27T11:15:00.000Z",
+"valor": 8.2,
+"unidade": "pH"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b876"
+},
+"idEquipamento": 3,
+"timestamp": "2024-08-27T12:00:00.000Z",
+"valor": 10.5,
+"unidade": "NTU"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b877"
+},
+"idEquipamento": 4,
+"timestamp": "2024-08-27T13:45:00.000Z",
+"valor": 35.2,
+"unidade": "PSU"
+}
+{
+"_id": {
+"$oid": "6668aa2f1bbdd5a3c793b878"
+},
+"idEquipamento": 5,
+"timestamp": "2024-08-27T14:30:00.000Z",
+"valor": 7.8,
+"unidade": "mg/L"
+}
