@@ -5,7 +5,18 @@
 -- IMPORTANTE: SIGA AS INSTRUÇÕES DE EXECUÇÃO PARA UMA MELHOR EXECUÇÃO DO CÓDIGO! --
 
 -- Neste capitulo abaixo, criaremos as tabelas conforme a necessidade do software
--- Execute da linha 9 até a linha 114 para executar as tabelas
+-- Execute da linha 10 até a linha 210 para certificar a exclusão e executar as tabelas e sequences
+
+DROP TABLE ALERTA_EQUIPAMENTO cascade constraints;
+DROP TABLE EQUIPAMENTO CASCADE CONSTRAINTS;
+DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
+DROP TABLE LEITURA_EQUIPAMENTO CASCADE CONSTRAINTS;
+DROP TABLE LOCAL_EQUIPAMENTO CASCADE CONSTRAINTS;
+DROP TABLE MANUTENCAO_EQUIPAMENTO CASCADE CONSTRAINTS;
+DROP TABLE PARCEIROS CASCADE CONSTRAINTS;
+DROP TABLE RELATORIO CASCADE CONSTRAINTS;
+DROP TABLE USUARIO CASCADE CONSTRAINTS;
+DROP TABLE AUDIT_LOG CASCADE CONSTRAINTS;
 
 CREATE TABLE alerta_equipamento (
     id_alerta                      NUMBER(10) NOT NULL,
@@ -136,7 +147,7 @@ CREATE SEQUENCE SEQ_ID_ALERTA START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE SEQ_AUDIT_LOG START WITH 1 INCREMENT BY 1;
 
 --Neste capitulo abaixo, criaremos as chaves estrangeiras conforme a necessidade dos relacionamentos entre as tabelas
--- Execute da linha 141 até a linha 200 para executar as chaves estrangeiras
+-- Execute as linhas até a linha 210 para executar as chaves estrangeiras
 
 ALTER TABLE alerta_equipamento
     ADD CONSTRAINT alerta_leitura_fk FOREIGN KEY (leitura_equipamento_id_leitura)
@@ -199,7 +210,7 @@ ALTER TABLE relatorio
         REFERENCES funcionario (id_func);
 
 -- Nos dados abaixo, foram encapsuladas as procedures dentro de seu respectivo package (por tabela) para melhor organização manutenção do código
--- Execute da linha 203 até a linha 530 para executar os packages e suas procedures
+-- Execute da linha 203 até a linha 542 para executar os packages e suas procedures
 
 -- Pacote para a tabela USUARIO
 CREATE OR REPLACE PACKAGE pkg_usuario AS
@@ -529,7 +540,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_alerta_equipamento AS
 END pkg_alerta_equipamento;
 /
 
--- NESTA SEÇÃO A PARTIR DA LINHA 535 REALIZAREMOS TESTES DOS INSERTS NAS PROCEDURES
+-- NESTA SEÇÃO A PARTIR DA LINHA 543 REALIZAREMOS TESTES DOS INSERTS NAS PROCEDURES
 
 -- Realizando TESTES com a procedure de INSERIR USUARIO
 BEGIN
@@ -591,7 +602,7 @@ BEGIN
         p_id_leitura                 => SEQ_ID_LEITURA_EQUIP.nextval,
         p_dt_leitura                 => SYSDATE,
         p_tipo_leitura               => 'Salinidade',
-        p_valor_leitura              => 30,
+        p_valor_leitura              => 9.99,
         p_local_equipamento_id_local => SEQ_ID_LOCAL_EQUIP.currval,
         p_parceiros_id_parceiro      => SEQ_ID_PARC.currval,
         p_usuario_id_user            => SEQ_ID_USER.currval,
@@ -775,3 +786,6 @@ BEGIN
     END IF;
 END;
 /
+
+-- AGORA VEJA SE REGISTROU NA TABELA DE AUDITORIA
+SELECT * FROM audit_log;
