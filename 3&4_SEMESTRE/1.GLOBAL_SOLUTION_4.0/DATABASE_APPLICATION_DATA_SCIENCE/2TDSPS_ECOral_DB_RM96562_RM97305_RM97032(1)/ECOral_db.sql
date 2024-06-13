@@ -7,7 +7,7 @@
 -- Neste capitulo abaixo, criaremos as tabelas conforme a necessidade do software
 -- Execute da linha 10 até a linha 210 para certificar a exclusão e executar as tabelas e sequences
 
-DROP TABLE ALERTA_EQUIPAMENTO cascade constraints;
+DROP TABLE ALERTA_EQUIPAMENTO CASCADE CONSTRAINTS;
 DROP TABLE EQUIPAMENTO CASCADE CONSTRAINTS;
 DROP TABLE FUNCIONARIO CASCADE CONSTRAINTS;
 DROP TABLE LEITURA_EQUIPAMENTO CASCADE CONSTRAINTS;
